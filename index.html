@@ -11,7 +11,9 @@
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="css/animate.min.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/modal.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="icon"
       type="image/png"
       href="/images/cloud_logo.png" />
@@ -233,9 +235,59 @@
                     <h5 class="title" style="color: black">Visitor Resources</h5>
                     <hr>
                     <ul>
-                        <li><a href="" style="color: black" target="_blank">Code of conduct</a></li>
-                        <li><a href="" style="color: black" target="_blank">Community guidelines</a></li>
-                        <li><a href="" style="color: black" target="_blank">Organizer acknowledgements</a></li>
+                        <li><a href="#open-modal" style="color: black">Code of conduct
+                            <i style="font-size:14px;" class="material-icons">open_in_new</i></a>
+                        </li>
+                        <div id="open-modal" class="modal-window">
+                          <div class="resources">
+                            <h6>
+                              When you join our programs, you’re joining a community; like any growing community, a few ground rules about expected behavior are good for everyone. These guidelines cover both online (e.g. mailing lists, social channels) and offline (e.g. in-person meetups) behavior.
+                              <br><br>
+                              Violations of this code of conduct can result in members being removed from the program. Use your best judgement and if you’d like more clarity or have questions feel free to reach out.
+                            </h6>
+                            <a href="#modal-close" title="Close" class="modal-close">Close</a>
+                          </div>
+                        </div>
+                        <li><a href="#open-modal2" style="color: black">Community guidelines
+                            <i style="font-size:14px;" class="material-icons">open_in_new</i></a>
+                        </li>
+                        <div id="open-modal2" class="modal-window">
+                          <div class="resources">
+                            <h6>
+                              <b>Be nice - </b>We're all part of the same community, so be friendly, welcoming, and generally a nice person.
+                              <br><br>
+                              <b>Be respectful and constructive - </b>Don't get into flamewars, make personal attacks, vent or rant unconstructively.
+                              <br><br>
+                              <b>Be collaborative - </b>Work together! We can learn a lot from each other.
+                              <br><br>
+                              <b>Participate - </b>Join in on discussions, show up for in-person meetings regularly, offer feedback, and help implement that feedback.
+                              <br><br>
+                              <b>Step down considerately - </b>If you know that a new job or personal situation will limit your time, find someone who can take over for you and transfer the relevant information (contacts, passwords, etc.) for a smooth transition.
+                              <br><br>
+                              <b>Basic etiquette for online discussions - </b>Don’t send messages to a big list that only need to go to one person. Keep off topic conversations to a minimum.
+                            </h6>
+                            <a href="#modal-close" title="Close" class="modal-close">Close</a>
+                          </div>
+                        </div>
+                        <li><a href="#open-modal3" style="color: black">Organizer acknowledgements
+                            <i style="font-size:14px;" class="material-icons">open_in_new</i></a>
+                        </li>
+                        <div id="open-modal3" class="modal-window">
+                            <div class="resources">
+                              <h6>
+                                  1. We abide by the <a href="https://www.google.com/events/policy/anti-harassmentpolicy.html" target="_blank">Google Event Community Guidelines</a> and <a href="https://support.google.com/developergroups/answer/3340512" target="_blank">Anti- Harassment Policy</a>
+                                  <br><br>
+                                  2. It’s NOT ok to use GCDC for profit. Organizers should only charge attendees for ticket entry and/or get sponsorships to cover costs of event operations (e.g. food and drinks, venue, setup, speakers) if needed.
+                                  <br><br>
+                                  3. It’s ok to partner with other groups and companies to arrange speakers, venues, and sponsorships.
+                                  <br><br>
+                                  4. It’s ok to talk about non-Google technologies in your community. We want to promote learning across technologies without bashing any company including Google or others.
+                                  <br><br>
+                                  5. The use of the GCDC name/logo is granted to organizers so long as they are in good standing with Google Developers and follow the brand guidelines.
+                              </h6>
+                              <a href="#modal-close" title="Close" class="modal-close">Close</a>
+                            </div>
+                        </div>
                     </ul>
                 </div>
                 <div class="col-md-4">
