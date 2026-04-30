@@ -2,59 +2,168 @@ import Image from "next/image";
 import Link from "next/link";
 
 const chapterHref = "https://gdg.community.dev/gdg-cloud-bengaluru/";
+const registerHref =
+  "https://gdg.community.dev/events/details/google-gdg-cloud-bengaluru-presents-deployfest/";
+const callForProposalsHref = chapterHref;
+const venueInterestFormHref = chapterHref;
 
-const stats = [
-  {
-    value: "5K+",
-    title: "Community Reach",
-    label: "developers, architects, and cloud practitioners connected across Bengaluru",
-    color: "#4285F4",
-  },
-  {
-    value: "Cloud + AI",
-    title: "Technical Focus",
-    label: "programming across Google Cloud, GenAI, Vertex AI, Kubernetes, and DevOps",
-    color: "#EA4335",
-  },
-  {
-    value: "Build",
-    title: "Learning Format",
-    label: "hands-on workshops, buildathons, demos, study jams, and community days",
-    color: "#FBBC04",
-  },
-  {
-    value: "GDG",
-    title: "Global Network",
-    label: "part of the Google Developer Groups ecosystem with a local Bengaluru identity",
-    color: "#34A853",
-  },
+const utilityDetails = [
+  ["Date", "May 23, 2026"],
+  ["Time", "9:00 AM to 8:00 PM IST"],
+  ["Venue", "Deutsche Bank, Bengaluru"],
 ];
 
 const initiatives = [
   {
-    title: "Technical Programs",
+    title: "Cloud Infrastructure & Architectures",
     color: "#4285F4",
     description:
-      "High-signal sessions across Google Cloud, GenAI, Kubernetes, DevOps, platform engineering, and production systems.",
+      "Distributed systems, cloud architecture patterns, scalability, reliability, and platform design for production.",
   },
   {
-    title: "Hands-on Buildathons",
+    title: "AI & Applied Machine Learning",
     color: "#EA4335",
     description:
-      "Focused build formats where teams prototype, deploy, demo, and learn from real engineering constraints.",
+      "Practical AI workflows with Gemini, Vertex AI, model evaluation, and delivery-focused ML engineering.",
   },
   {
-    title: "Professional Exchange",
+    title: "Web Technologies",
     color: "#34A853",
     description:
-      "A network for developers, architects, platform engineers, and technology leaders to exchange practical perspective.",
+      "Modern frontend and full-stack engineering across performance, developer tooling, and product delivery.",
+  },
+  {
+    title: "Open Source Contributions",
+    color: "#FBBC04",
+    description:
+      "Community-driven collaboration through OSS projects, code contributions, mentorship, and maintainer-led sessions.",
   },
 ];
 
-const pastEvents = [
-  "Come for Cloud, Stay for Success",
-  "Build with AI: GDG Cloud Bangalore Edition",
-  "Google Cloud Community Day Bengaluru 2025",
+const communityStats = [
+  ["40+", "Events till now"],
+  ["5K+", "Developers reached"],
+  ["120+", "Sessions hosted"],
+  ["80+", "Speakers and mentors"],
+];
+
+type CommunityCall = {
+  title: string;
+  label: string;
+  summary: string;
+  points: string[];
+  color: string;
+  href: string;
+  cta: string;
+};
+
+const communityCalls: CommunityCall[] = [
+  {
+    title: "Call for Proposals",
+    label: "Speakers · Workshops · Demos",
+    summary:
+      "Share your engineering experience with the community through technical talks, workshops, and practical walkthroughs.",
+    points: [
+      "Cloud, AI, DevOps, Kubernetes, and platform engineering topics",
+      "Real implementation stories and production learnings",
+      "Accepted sessions are featured in upcoming event programs",
+    ],
+    color: "#4285F4",
+    href: callForProposalsHref,
+    cta: "Submit proposal",
+  },
+  {
+    title: "Venue Interest Form",
+    label: "Host Partner · Campus · Workspace",
+    summary:
+      "Want to host a GDG Cloud Bengaluru session or event day? Share your venue details and collaboration intent.",
+    points: [
+      "Suitable for meetups, workshops, and community day formats",
+      "Support options: space, A/V, logistics, and local coordination",
+      "Team follows up with fit, dates, and event requirements",
+    ],
+    color: "#34A853",
+    href: venueInterestFormHref,
+    cta: "Submit venue interest",
+  },
+];
+
+const galleryOverlayStyles = {
+  feature: {
+    gradient: "h-36 sm:h-44",
+    content: "p-5 sm:p-7",
+    tag: "text-xs sm:text-sm",
+    title: "text-lg leading-tight sm:text-2xl sm:leading-[1.15]",
+    detail: "mt-2 hidden text-sm leading-6 text-white sm:block sm:text-base",
+  },
+  medium: {
+    gradient: "h-28 sm:h-36",
+    content: "p-5 sm:p-6",
+    tag: "text-[11px] sm:text-xs",
+    title: "text-base leading-tight sm:text-xl",
+    detail: "mt-2 hidden text-xs leading-5 text-white sm:block sm:text-sm",
+  },
+  compact: {
+    gradient: "h-24 sm:h-32",
+    content: "p-5 sm:p-5",
+    tag: "text-[11px] sm:text-xs",
+    title: "text-[15px] leading-tight sm:text-lg",
+    detail: "mt-1 hidden text-xs leading-5 text-white md:block",
+  },
+} as const;
+
+type GalleryOverlayVariant = keyof typeof galleryOverlayStyles;
+
+type GalleryHighlight = {
+  title: string;
+  tag: string;
+  color: string;
+  tileClass: string;
+  overlay: GalleryOverlayVariant;
+  image: string;
+};
+
+const galleryHighlights: GalleryHighlight[] = [
+  {
+    title: "Community Day Bengaluru 2025",
+    tag: "Conference",
+    color: "#EA4335",
+    tileClass: "col-span-1 sm:col-span-4 sm:row-span-2",
+    overlay: "feature",
+    image: "/gallery/community-day.jpg",
+  },
+  {
+    title: "Come for Cloud, Stay for Success",
+    tag: "Demos",
+    color: "#4285F4",
+    tileClass: "col-span-1 sm:col-span-2 sm:row-span-1",
+    overlay: "compact",
+    image: "/gallery/cfcsfs.jpg",
+  },
+  {
+    title: "Cloud Observability Summit",
+    tag: "Summit",
+    color: "#4285F4",
+    tileClass: "col-span-1 sm:col-span-2 sm:row-span-2",
+    overlay: "compact",
+    image: "/gallery/observability.jpg",
+  },
+  {
+    title: "Cloud for all",
+    tag: "Meetup",
+    color: "#FBBC04",
+    tileClass: "col-span-1 sm:col-span-2 sm:row-span-1",
+    overlay: "compact",
+    image: "/gallery/cloudforall.jpg",
+  },
+  {
+    title: "Cloudtoberfest",
+    tag: "Meetup",
+    color: "#34A853",
+    tileClass: "col-span-1 sm:col-span-2 sm:row-span-1",
+    overlay: "compact",
+    image: "/gallery/cloudtoberfest.jpeg",
+  },
 ];
 
 function GoogleDots() {
@@ -103,7 +212,11 @@ export default function Home() {
           <span className="bg-[#34A853]" />
         </div>
         <nav className="mx-auto flex h-16 w-full max-w-7xl items-center justify-between px-5 sm:px-8 lg:px-12">
-          <a href="#top" className="flex items-center" aria-label="GDG Cloud Bengaluru home">
+          <a
+            href="#top"
+            className="flex items-center"
+            aria-label="GDG Cloud Bengaluru home"
+          >
             <Image
               src="/logo.png"
               alt="GDG Cloud Bengaluru"
@@ -114,68 +227,81 @@ export default function Home() {
             />
           </a>
           <div className="hidden items-center gap-8 md:flex">
-            <a className="text-sm font-medium text-[#5F6368] hover:text-[#202124]" href="#programs">
-              Focus Areas
+            <a
+              className="text-sm font-medium text-[#5F6368] hover:text-[#202124]"
+              href="#top"
+            >
+              Spotlight
             </a>
-            <Link className="text-sm font-medium text-[#5F6368] hover:text-[#202124]" href="/events">
+            <a
+              className="text-sm font-medium text-[#5F6368] hover:text-[#202124]"
+              href="#focus-areas"
+            >
+              Core Initiatives
+            </a>
+            <a
+              className="text-sm font-medium text-[#5F6368] hover:text-[#202124]"
+              href="#calls-forms"
+            >
+              CFP & Venue
+            </a>
+            <a
+              className="text-sm font-medium text-[#5F6368] hover:text-[#202124]"
+              href="#gallery"
+            >
+              Hall of Fame
+            </a>
+            <Link
+              className="text-sm font-medium text-[#5F6368] hover:text-[#202124]"
+              href="/events"
+            >
               Events
             </Link>
-            <a className="text-sm font-medium text-[#5F6368] hover:text-[#202124]" href="#community">
-              Membership
-            </a>
           </div>
           <a
-            href={chapterHref}
+            href={registerHref}
             className="inline-flex h-10 items-center rounded-full bg-[#1A73E8] px-5 text-sm font-semibold text-white transition-opacity hover:opacity-90"
           >
-            Join
+            Register
           </a>
         </nav>
       </header>
 
       <main id="top">
-        <section className="mx-auto grid min-h-[calc(100vh-4.25rem)] w-full max-w-7xl items-center gap-16 px-5 py-24 sm:px-8 lg:grid-cols-[1.05fr_0.95fr] lg:px-12">
-          <div>
-            <Image
-              src="/logo.png"
-              alt="GDG Cloud Bengaluru"
-              width={325}
-              height={50}
-              priority
-              className="mb-10 h-auto w-64 sm:w-80"
-            />
-            <div className="mb-8 inline-flex items-center gap-3 rounded-full border border-[#DADCE0] bg-[#FFFFFF] px-4 py-2 text-sm font-medium text-[#5F6368]">
+        <section className="mx-auto grid min-h-[calc(100vh-4.25rem)] w-full max-w-7xl items-center gap-16 px-5 py-16 sm:px-8 sm:py-20 lg:h-[calc(100svh-4.25rem)] lg:min-h-0 lg:grid-cols-[minmax(0,1fr)_minmax(0,36rem)] lg:gap-10 lg:px-12 lg:py-6 xl:gap-14">
+          <div className="lg:pr-4">
+            <div className="mb-8 inline-flex items-center gap-3 rounded-full border border-[#DADCE0] bg-[#FFFFFF] px-4 py-2 text-sm font-medium text-[#5F6368] lg:mb-6">
               <GoogleDots />
               <span>5K+ members across Bengaluru’s cloud community</span>
             </div>
-            <h1 className="max-w-4xl text-5xl font-semibold leading-[1.02] tracking-tight text-[#202124] sm:text-6xl lg:text-7xl">
-              Where Bengaluru’s cloud practitioners learn, connect, and lead.
+            <h1 className="max-w-4xl text-5xl font-semibold leading-[1.02] tracking-tight text-[#202124] sm:text-6xl lg:max-w-3xl lg:text-7xl">
+              A cloud community built for developers who ship.
             </h1>
-            <p className="mt-8 max-w-2xl text-lg leading-8 text-[#5F6368]">
-              GDG Cloud Bengaluru convenes developers, architects, platform
-              engineers, and technology leaders to exchange practical knowledge
-              across Google Cloud, GenAI, DevOps, and production infrastructure.
+            <p className="mt-8 max-w-2xl text-lg leading-8 text-[#5F6368] lg:mt-6">
+              GDG Cloud Bengaluru brings together developers, architects, and
+              platform engineers for practical learning in Google Cloud, GenAI,
+              Kubernetes, DevOps, and production systems.
             </p>
-            <div className="mt-10 flex flex-col gap-3 sm:flex-row">
+            <div className="mt-10 flex flex-col gap-3 sm:flex-row lg:mt-8">
               <a
-                href={chapterHref}
+                href={registerHref}
                 className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-[#1A73E8] px-7 text-sm font-semibold text-white transition-opacity hover:opacity-90"
               >
-                Join the community
+                Register for DeployFest
                 <ArrowIcon />
               </a>
               <Link
                 href="/events"
                 className="inline-flex h-12 items-center justify-center rounded-full border border-[#DADCE0] px-7 text-sm font-semibold text-[#1A73E8] transition-colors hover:border-[#1A73E8]"
               >
-                Explore events
+                View all events
               </Link>
             </div>
           </div>
 
-          <aside className="rounded-[2rem] border border-[#DADCE0] bg-[#F8F9FA] p-3">
-            <div className="rounded-[1.5rem] border border-[#DADCE0] bg-[#FFFFFF] p-8">
-              <SectionLabel>Next event</SectionLabel>
+          <aside className="w-full rounded-[2rem] border border-[#DADCE0] bg-[#F8F9FA] p-3 lg:ml-auto">
+            <div className="rounded-[1.5rem] border border-[#DADCE0] bg-[#FFFFFF] p-8 lg:p-6">
+              <SectionLabel>Next event utility panel</SectionLabel>
               <h2 className="mt-5 text-3xl font-semibold tracking-tight text-[#202124]">
                 DeployFest
               </h2>
@@ -183,27 +309,34 @@ export default function Home() {
                 A single-day Google Cloud and GenAI buildathon focused on live
                 deployments, demos, judging, and a 7-hour deployment sprint.
               </p>
-              <dl className="mt-8 grid gap-5 border-y border-[#DADCE0] py-6">
-                {[
-                  ["Date", "May 23, 2026"],
-                  ["Venue", "Deutsche Bank Shared Services"],
-                  ["Location", "Electronic City, Bengaluru"],
-                ].map(([label, value]) => (
+              <dl className="mt-8 grid gap-4 border-t border-[#DADCE0] pt-6 lg:mt-6 lg:gap-3 lg:pt-5">
+                {utilityDetails.map(([label, value]) => (
                   <div key={label} className="grid grid-cols-[6rem_1fr] gap-4">
                     <dt className="text-xs font-semibold uppercase text-[#5F6368]">
                       {label}
                     </dt>
-                    <dd className="text-sm font-semibold text-[#202124]">{value}</dd>
+                    <dd className="text-sm font-semibold text-[#202124]">
+                      {value}
+                    </dd>
                   </div>
                 ))}
               </dl>
-              <Link
-                href="/events"
-                className="mt-8 inline-flex h-12 items-center gap-2 rounded-full bg-[#1A73E8] px-7 text-sm font-semibold text-white transition-opacity hover:opacity-90"
-              >
-                View DeployFest
-                <ArrowIcon />
-              </Link>
+
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row lg:mt-6">
+                <a
+                  href={registerHref}
+                  className="inline-flex h-11 items-center justify-center gap-2 rounded-full bg-[#1A73E8] px-6 text-sm font-semibold text-white transition-opacity hover:opacity-90"
+                >
+                  Register now
+                  <ArrowIcon />
+                </a>
+                <a
+                  href={chapterHref}
+                  className="inline-flex h-11 items-center justify-center rounded-full border border-[#DADCE0] px-6 text-sm font-semibold text-[#1A73E8] transition-colors hover:border-[#1A73E8]"
+                >
+                  Contact organizers
+                </a>
+              </div>
             </div>
             <div className="grid grid-cols-4 gap-2 p-5" aria-hidden="true">
               <span className="h-1 rounded-full bg-[#4285F4]" />
@@ -214,115 +347,252 @@ export default function Home() {
           </aside>
         </section>
 
-        <section className="mx-auto w-full max-w-7xl px-5 pb-24 sm:px-8 lg:px-12">
-          <div className="mb-8 flex items-center justify-between gap-6">
+        <section
+          id="focus-areas"
+          className="mx-auto w-full max-w-7xl scroll-mt-24 border-y border-[#ECEFF1] bg-[#FCFCFD] px-5 py-16 sm:px-8 sm:py-20 lg:px-12 lg:py-28"
+        >
+          <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-end">
             <div>
-              <SectionLabel>Community signals</SectionLabel>
-              <h2 className="mt-3 text-2xl font-semibold tracking-tight text-[#202124] sm:text-3xl">
-                Scale, focus, and operating model at a glance.
+              <SectionLabel>Technical focus areas</SectionLabel>
+              <h2 className="mt-4 max-w-3xl text-3xl font-semibold tracking-tight text-[#202124] sm:text-5xl">
+                Core initiatives that define our community programs.
               </h2>
+              <p className="mt-5 max-w-2xl text-base leading-7 text-[#5F6368] sm:text-lg">
+                Every track is designed for practical implementation, clear
+                architecture thinking, and measurable developer growth.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-2 gap-4 rounded-2xl border border-[#DADCE0] bg-[#F8F9FA] p-6">
+              {communityStats.map(([value, label]) => (
+                <div
+                  key={label}
+                  className="rounded-xl border border-[#DADCE0] bg-[#FFFFFF] px-4 py-4 transition-all duration-200 hover:-translate-y-0.5 hover:border-[#BDC1C6] hover:bg-[#F8F9FA]"
+                >
+                  <p className="text-2xl font-semibold tracking-tight text-[#202124]">
+                    {value}
+                  </p>
+                  <p className="mt-1 text-xs font-semibold uppercase leading-5 text-[#5F6368]">
+                    {label}
+                  </p>
+                </div>
+              ))}
             </div>
           </div>
-          <div className="grid overflow-hidden rounded-3xl border border-[#DADCE0] bg-[#FFFFFF] sm:grid-cols-2 lg:grid-cols-4">
-            {stats.map((stat) => (
+
+          <div className="mt-16 grid gap-6 lg:grid-cols-4">
+            {initiatives.map((item) => (
               <article
-                key={stat.title}
-                className="border-b border-[#DADCE0] p-6 last:border-b-0 lg:border-b-0 lg:border-r lg:last:border-r-0"
+                key={item.title}
+                className="rounded-2xl border border-[#DADCE0] bg-[#FFFFFF] p-7 transition-all duration-200 hover:-translate-y-0.5 hover:border-[#BDC1C6] hover:bg-[#F8F9FA]"
               >
                 <span
-                  className="mb-6 block h-1 w-12 rounded-full"
-                  style={{ backgroundColor: stat.color }}
+                  className="mb-7 block h-1 w-12 rounded-full"
+                  style={{ backgroundColor: item.color }}
                   aria-hidden="true"
                 />
-                <p className="text-3xl font-semibold tracking-tight text-[#202124]">
-                  {stat.value}
-                </p>
-                <h3 className="mt-5 text-sm font-semibold uppercase text-[#202124]">
-                  {stat.title}
+                <h3 className="text-lg font-semibold tracking-tight text-[#202124]">
+                  {item.title}
                 </h3>
-                <p className="mt-3 text-sm leading-6 text-[#5F6368]">
-                  {stat.label}
+                <p className="mt-4 text-sm leading-6 text-[#5F6368]">
+                  {item.description}
                 </p>
               </article>
             ))}
           </div>
         </section>
 
-        <section id="programs" className="mx-auto w-full max-w-7xl px-5 py-24 sm:px-8 lg:px-12 lg:py-32">
-          <div className="mx-auto max-w-3xl text-center">
-            <SectionLabel>Technical focus areas</SectionLabel>
-            <h2 className="mt-4 text-3xl font-semibold tracking-tight text-[#202124] sm:text-5xl">
-              A program portfolio built around cloud depth and practical delivery.
-            </h2>
-            <p className="mt-5 text-base leading-7 text-[#5F6368] sm:text-lg">
-              Programs are shaped around practical talks, applied workshops,
-              peer networking, and large-format cloud community experiences.
-            </p>
-          </div>
-          <div className="mt-16 grid gap-6 lg:grid-cols-3">
-            {initiatives.map((item) => (
-              <article key={item.title} className="rounded-3xl border border-[#DADCE0] bg-[#F8F9FA] p-8">
-                <span className="mb-8 block h-1 w-12 rounded-full" style={{ backgroundColor: item.color }} aria-hidden="true" />
-                <h3 className="text-xl font-semibold tracking-tight text-[#202124]">{item.title}</h3>
-                <p className="mt-4 text-sm leading-6 text-[#5F6368]">{item.description}</p>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        <section className="mx-auto w-full max-w-7xl px-5 py-24 sm:px-8 lg:px-12 lg:py-32">
-          <div className="grid gap-14 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
+        <section
+          id="calls-forms"
+          className="mx-auto w-full max-w-7xl scroll-mt-24 px-5 py-16 sm:px-8 sm:py-20 lg:px-12 lg:py-28"
+        >
+          <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
             <div>
-              <SectionLabel>Event portfolio</SectionLabel>
+              <SectionLabel>Open community calls</SectionLabel>
               <h2 className="mt-4 text-3xl font-semibold tracking-tight text-[#202124] sm:text-5xl">
-                Previous programs show the community’s range and technical maturity.
+                Call for proposals and venue interest forms.
               </h2>
+              <p className="mt-5 max-w-xl text-base leading-7 text-[#5F6368] sm:text-lg">
+                We are actively onboarding speakers and host partners for
+                upcoming sessions. Use the links below to submit your interest.
+              </p>
             </div>
-            <div className="divide-y divide-[#DADCE0] border-y border-[#DADCE0]">
-              {pastEvents.map((event) => (
-                <div key={event} className="flex items-center justify-between gap-8 py-6">
-                  <p className="text-base font-semibold text-[#202124]">{event}</p>
-                  <Link href="/events" className="shrink-0 text-sm font-semibold text-[#1A73E8] hover:text-[#202124]">
-                    Details
-                  </Link>
-                </div>
+
+            <div className="grid gap-4 sm:grid-cols-2">
+              {communityCalls.map((call) => (
+                <article
+                  key={call.title}
+                  className="rounded-2xl border border-[#DADCE0] bg-[#FFFFFF] p-6 transition-all duration-200 hover:-translate-y-0.5 hover:border-[#BDC1C6] hover:bg-[#F8F9FA]"
+                >
+                  <div className="flex items-center justify-between gap-3">
+                    <span
+                      className="h-1.5 w-10 rounded-full"
+                      style={{ backgroundColor: call.color }}
+                      aria-hidden="true"
+                    />
+                    <span className="rounded-full border border-[#DADCE0] bg-[#F8F9FA] px-3 py-1 text-xs font-semibold uppercase text-[#5F6368]">
+                      Open
+                    </span>
+                  </div>
+                  <p className="mt-4 text-xs font-semibold uppercase tracking-wide text-[#5F6368]">
+                    {call.label}
+                  </p>
+                  <h3 className="mt-2 text-xl font-semibold tracking-tight text-[#202124]">
+                    {call.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-6 text-[#5F6368]">
+                    {call.summary}
+                  </p>
+                  <ul className="mt-4 space-y-2 text-sm text-[#5F6368]">
+                    {call.points.map((point) => (
+                      <li key={point} className="flex items-start gap-2">
+                        <span
+                          className="mt-2 h-1.5 w-1.5 rounded-full bg-[#1A73E8]"
+                          aria-hidden="true"
+                        />
+                        <span>{point}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <a
+                    href={call.href}
+                    className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[#1A73E8] hover:text-[#202124]"
+                  >
+                    {call.cta}
+                    <ArrowIcon />
+                  </a>
+                </article>
               ))}
             </div>
           </div>
         </section>
 
-        <section id="community" className="mx-auto w-full max-w-5xl px-5 py-24 text-center sm:px-8 lg:px-12 lg:py-32">
-          <div className="mb-8 flex justify-center">
-            <GoogleDots />
+        <section
+          id="gallery"
+          className="mx-auto w-full max-w-7xl scroll-mt-24 border-y border-[#ECEFF1] bg-[#FCFCFD] px-5 py-16 sm:px-8 sm:py-20 lg:px-12 lg:py-28"
+        >
+          <div className="grid gap-14 lg:grid-cols-[0.82fr_1.18fr] lg:items-start">
+            <div>
+              <SectionLabel>Community gallery</SectionLabel>
+              <h2 className="mt-4 text-3xl font-semibold tracking-tight text-[#202124] sm:text-5xl">
+                Moments from builds, talks, labs, and demo nights.
+              </h2>
+              <p className="mt-5 max-w-xl text-base leading-7 text-[#5F6368] sm:text-lg">
+                A visual wall of how the community operates: practical sessions,
+                collaborative problem-solving, and real project outcomes.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-2 gap-4 sm:auto-rows-[9rem] sm:grid-cols-6">
+              {galleryHighlights.map((item) =>
+                (() => {
+                  const overlay = galleryOverlayStyles[item.overlay];
+                  return (
+                    <article
+                      key={item.title}
+                      className={`group relative aspect-square overflow-hidden rounded-2xl border border-[#DADCE0] bg-[#F8F9FA] transition-all duration-200 hover:-translate-y-0.5 hover:border-[#BDC1C6] sm:aspect-auto ${item.tileClass}`}
+                    >
+                      {item.image && (
+                        <Image
+                          src={item.image}
+                          alt={item.title}
+                          fill
+                          className="absolute inset-0 object-cover"
+                          sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                          priority={false}
+                        />
+                      )}
+                      {!item.image && (
+                        <>
+                          <div
+                            className="absolute inset-0"
+                            style={{
+                              background: `linear-gradient(135deg, ${item.color}2B 0%, #F8F9FA 55%, #FFFFFF 100%)`,
+                            }}
+                            aria-hidden="true"
+                          />
+                          <div
+                            className="absolute inset-0"
+                            style={{
+                              background:
+                                "radial-gradient(circle at top right, rgba(255,255,255,0.62), transparent 45%)",
+                            }}
+                            aria-hidden="true"
+                          />
+                        </>
+                      )}
+                      <div
+                        className={`absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#202124]/95 via-[#202124]/75 to-transparent ${overlay.gradient}`}
+                        aria-hidden="true"
+                      />
+
+                      <div
+                        className={`relative flex h-full flex-col justify-between ${overlay.content}`}
+                      >
+                        <div className="flex items-center justify-between gap-3">
+                          <p
+                            className={`font-semibold uppercase tracking-wide text-[#5F6368] ${overlay.tag}`}
+                          >
+                            {item.tag}
+                          </p>
+                          <span
+                            className="h-2.5 w-2.5 rounded-full"
+                            style={{ backgroundColor: item.color }}
+                            aria-hidden="true"
+                          />
+                        </div>
+
+                        <div>
+                          <h3
+                            className={`font-semibold tracking-tight text-white ${overlay.title}`}
+                          >
+                            {item.title}
+                          </h3>
+                        </div>
+                      </div>
+                    </article>
+                  );
+                })(),
+              )}
+            </div>
           </div>
-          <h2 className="text-3xl font-semibold tracking-tight text-[#202124] sm:text-5xl">
-            Be part of Bengaluru’s cloud engineering community.
-          </h2>
-          <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-[#5F6368] sm:text-lg">
-            Join GDG Cloud Bengaluru to stay informed about upcoming programs,
-            connect with peers, and contribute to a community focused on
-            practical cloud excellence.
-          </p>
-          <a
-            href={chapterHref}
-            className="mt-10 inline-flex h-12 items-center gap-2 rounded-full bg-[#1A73E8] px-7 text-sm font-semibold text-white transition-opacity hover:opacity-90"
-          >
-            Join GDG Cloud Bengaluru
-            <ArrowIcon />
-          </a>
         </section>
       </main>
 
       <footer className="border-t border-[#DADCE0] bg-[#FFFFFF]">
         <div className="mx-auto flex w-full max-w-7xl flex-col gap-6 px-5 py-10 text-sm text-[#5F6368] sm:px-8 md:flex-row md:items-center md:justify-between lg:px-12">
           <div>
-            <Image src="/logo.png" alt="GDG Cloud Bengaluru" width={195} height={30} className="h-7 w-auto" />
+            <Image
+              src="/logo.png"
+              alt="GDG Cloud Bengaluru"
+              width={195}
+              height={30}
+              className="h-7 w-auto"
+            />
             <p className="mt-3">© 2026 GDG Cloud Bengaluru.</p>
           </div>
           <div className="flex flex-wrap gap-x-6 gap-y-3">
-            <a href="#programs" className="hover:text-[#202124]">Focus Areas</a>
-            <Link href="/events" className="hover:text-[#202124]">Events</Link>
-            <a href={chapterHref} className="text-[#1A73E8] hover:text-[#202124]">Join</a>
+            <a href="#top" className="hover:text-[#202124]">
+              Spotlight
+            </a>
+            <a href="#focus-areas" className="hover:text-[#202124]">
+              Core Initiatives
+            </a>
+            <a href="#calls-forms" className="hover:text-[#202124]">
+              CFP & Venue
+            </a>
+            <a href="#gallery" className="hover:text-[#202124]">
+              Hall of Fame
+            </a>
+            <Link href="/events" className="hover:text-[#202124]">
+              Events
+            </Link>
+            <a
+              href={registerHref}
+              className="text-[#1A73E8] hover:text-[#202124]"
+            >
+              Register
+            </a>
           </div>
         </div>
       </footer>
