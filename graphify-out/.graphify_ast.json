@@ -1,0 +1,1731 @@
+{
+  "nodes": [
+    {
+      "id": "eslint_config_mjs",
+      "label": "eslint.config.mjs",
+      "file_type": "code",
+      "source_file": "eslint.config.mjs",
+      "source_location": "L1"
+    },
+    {
+      "id": "gdgcblr_eslint_config_eslintconfig",
+      "label": "eslintConfig",
+      "file_type": "code",
+      "source_file": "eslint.config.mjs",
+      "source_location": "L5"
+    },
+    {
+      "id": "next_config_ts",
+      "label": "next.config.ts",
+      "file_type": "code",
+      "source_file": "next.config.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "gdgcblr_next_config_nextconfig",
+      "label": "nextConfig",
+      "file_type": "code",
+      "source_file": "next.config.ts",
+      "source_location": "L3"
+    },
+    {
+      "id": "package_json",
+      "label": "package.json",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "gdgcblr_package_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "gdgcblr_package_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "gdgcblr_package_private",
+      "label": "private",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "gdgcblr_package_scripts",
+      "label": "scripts",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "gdgcblr_package_scripts_dev",
+      "label": "dev",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "gdgcblr_package_scripts_build",
+      "label": "build",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "gdgcblr_package_scripts_start",
+      "label": "start",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "gdgcblr_package_scripts_lint",
+      "label": "lint",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L9"
+    },
+    {
+      "id": "gdgcblr_package_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L11"
+    },
+    {
+      "id": "gdgcblr_package_dependencies_framer_motion",
+      "label": "framer-motion",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L12"
+    },
+    {
+      "id": "gdgcblr_package_dependencies_next",
+      "label": "next",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L13"
+    },
+    {
+      "id": "gdgcblr_package_dependencies_react",
+      "label": "react",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L14"
+    },
+    {
+      "id": "gdgcblr_package_dependencies_react_dom",
+      "label": "react-dom",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L15"
+    },
+    {
+      "id": "gdgcblr_package_devdependencies",
+      "label": "devDependencies",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L17"
+    },
+    {
+      "id": "gdgcblr_package_devdependencies_tailwindcss_postcss",
+      "label": "@tailwindcss/postcss",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L18"
+    },
+    {
+      "id": "gdgcblr_package_devdependencies_types_node",
+      "label": "@types/node",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L19"
+    },
+    {
+      "id": "gdgcblr_package_devdependencies_types_react",
+      "label": "@types/react",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L20"
+    },
+    {
+      "id": "gdgcblr_package_devdependencies_types_react_dom",
+      "label": "@types/react-dom",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L21"
+    },
+    {
+      "id": "gdgcblr_package_devdependencies_eslint",
+      "label": "eslint",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L22"
+    },
+    {
+      "id": "gdgcblr_package_devdependencies_eslint_config_next",
+      "label": "eslint-config-next",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L23"
+    },
+    {
+      "id": "gdgcblr_package_devdependencies_tailwindcss",
+      "label": "tailwindcss",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L24"
+    },
+    {
+      "id": "gdgcblr_package_devdependencies_typescript",
+      "label": "typescript",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L25"
+    },
+    {
+      "id": "postcss_config_mjs",
+      "label": "postcss.config.mjs",
+      "file_type": "code",
+      "source_file": "postcss.config.mjs",
+      "source_location": "L1"
+    },
+    {
+      "id": "gdgcblr_postcss_config_config",
+      "label": "config",
+      "file_type": "code",
+      "source_file": "postcss.config.mjs",
+      "source_location": "L1"
+    },
+    {
+      "id": "tsconfig_json",
+      "label": "tsconfig.json",
+      "file_type": "code",
+      "source_file": "tsconfig.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "gdgcblr_tsconfig_compileroptions",
+      "label": "compilerOptions",
+      "file_type": "code",
+      "source_file": "tsconfig.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "gdgcblr_tsconfig_compileroptions_target",
+      "label": "target",
+      "file_type": "code",
+      "source_file": "tsconfig.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "gdgcblr_tsconfig_compileroptions_lib",
+      "label": "lib",
+      "file_type": "code",
+      "source_file": "tsconfig.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "gdgcblr_tsconfig_compileroptions_allowjs",
+      "label": "allowJs",
+      "file_type": "code",
+      "source_file": "tsconfig.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "gdgcblr_tsconfig_compileroptions_skiplibcheck",
+      "label": "skipLibCheck",
+      "file_type": "code",
+      "source_file": "tsconfig.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "gdgcblr_tsconfig_compileroptions_strict",
+      "label": "strict",
+      "file_type": "code",
+      "source_file": "tsconfig.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "gdgcblr_tsconfig_compileroptions_noemit",
+      "label": "noEmit",
+      "file_type": "code",
+      "source_file": "tsconfig.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "gdgcblr_tsconfig_compileroptions_esmoduleinterop",
+      "label": "esModuleInterop",
+      "file_type": "code",
+      "source_file": "tsconfig.json",
+      "source_location": "L9"
+    },
+    {
+      "id": "gdgcblr_tsconfig_compileroptions_module",
+      "label": "module",
+      "file_type": "code",
+      "source_file": "tsconfig.json",
+      "source_location": "L10"
+    },
+    {
+      "id": "gdgcblr_tsconfig_compileroptions_moduleresolution",
+      "label": "moduleResolution",
+      "file_type": "code",
+      "source_file": "tsconfig.json",
+      "source_location": "L11"
+    },
+    {
+      "id": "gdgcblr_tsconfig_compileroptions_resolvejsonmodule",
+      "label": "resolveJsonModule",
+      "file_type": "code",
+      "source_file": "tsconfig.json",
+      "source_location": "L12"
+    },
+    {
+      "id": "gdgcblr_tsconfig_compileroptions_isolatedmodules",
+      "label": "isolatedModules",
+      "file_type": "code",
+      "source_file": "tsconfig.json",
+      "source_location": "L13"
+    },
+    {
+      "id": "gdgcblr_tsconfig_compileroptions_jsx",
+      "label": "jsx",
+      "file_type": "code",
+      "source_file": "tsconfig.json",
+      "source_location": "L14"
+    },
+    {
+      "id": "gdgcblr_tsconfig_compileroptions_incremental",
+      "label": "incremental",
+      "file_type": "code",
+      "source_file": "tsconfig.json",
+      "source_location": "L15"
+    },
+    {
+      "id": "gdgcblr_tsconfig_compileroptions_plugins",
+      "label": "plugins",
+      "file_type": "code",
+      "source_file": "tsconfig.json",
+      "source_location": "L16"
+    },
+    {
+      "id": "gdgcblr_tsconfig_compileroptions_paths",
+      "label": "paths",
+      "file_type": "code",
+      "source_file": "tsconfig.json",
+      "source_location": "L21"
+    },
+    {
+      "id": "gdgcblr_tsconfig_paths",
+      "label": "@/*",
+      "file_type": "code",
+      "source_file": "tsconfig.json",
+      "source_location": "L22"
+    },
+    {
+      "id": "gdgcblr_tsconfig_include",
+      "label": "include",
+      "file_type": "code",
+      "source_file": "tsconfig.json",
+      "source_location": "L25"
+    },
+    {
+      "id": "gdgcblr_tsconfig_exclude",
+      "label": "exclude",
+      "file_type": "code",
+      "source_file": "tsconfig.json",
+      "source_location": "L33"
+    },
+    {
+      "id": "github_skills_idea_refine_scripts_idea_refine_sh",
+      "label": "idea-refine.sh",
+      "file_type": "code",
+      "source_file": ".github/skills/idea-refine/scripts/idea-refine.sh",
+      "source_location": "L1",
+      "metadata": {
+        "language": "bash",
+        "kind": "file"
+      }
+    },
+    {
+      "id": "d_college_projects_gdgcblr_github_skills_idea_refine_scripts_idea_refine_sh__entry",
+      "label": "idea-refine.sh script",
+      "file_type": "code",
+      "source_file": ".github/skills/idea-refine/scripts/idea-refine.sh",
+      "source_location": "L1",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_entrypoint"
+      }
+    },
+    {
+      "id": "impeccable_live_config_json",
+      "label": "config.json",
+      "file_type": "code",
+      "source_file": ".impeccable/live/config.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "live_config_files",
+      "label": "files",
+      "file_type": "code",
+      "source_file": ".impeccable/live/config.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "live_config_insertbefore",
+      "label": "insertBefore",
+      "file_type": "code",
+      "source_file": ".impeccable/live/config.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "live_config_commentsyntax",
+      "label": "commentSyntax",
+      "file_type": "code",
+      "source_file": ".impeccable/live/config.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "app_layout_tsx",
+      "label": "layout.tsx",
+      "file_type": "code",
+      "source_file": "app/layout.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "app_layout_metadata",
+      "label": "metadata",
+      "file_type": "code",
+      "source_file": "app/layout.tsx",
+      "source_location": "L4"
+    },
+    {
+      "id": "app_layout_rootlayout",
+      "label": "RootLayout()",
+      "file_type": "code",
+      "source_file": "app/layout.tsx",
+      "source_location": "L10"
+    },
+    {
+      "id": "app_page_tsx",
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "app/page.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "app_page_utilitydetails",
+      "label": "utilityDetails",
+      "file_type": "code",
+      "source_file": "app/page.tsx",
+      "source_location": "L13"
+    },
+    {
+      "id": "app_page_initiatives",
+      "label": "initiatives",
+      "file_type": "code",
+      "source_file": "app/page.tsx",
+      "source_location": "L19"
+    },
+    {
+      "id": "app_page_communitystats",
+      "label": "communityStats",
+      "file_type": "code",
+      "source_file": "app/page.tsx",
+      "source_location": "L46"
+    },
+    {
+      "id": "app_page_herosignals",
+      "label": "heroSignals",
+      "file_type": "code",
+      "source_file": "app/page.tsx",
+      "source_location": "L53"
+    },
+    {
+      "id": "app_page_communitycall",
+      "label": "CommunityCall",
+      "file_type": "code",
+      "source_file": "app/page.tsx",
+      "source_location": "L72"
+    },
+    {
+      "id": "app_page_communitycalls",
+      "label": "communityCalls",
+      "file_type": "code",
+      "source_file": "app/page.tsx",
+      "source_location": "L83"
+    },
+    {
+      "id": "app_page_galleryoverlaystyles",
+      "label": "galleryOverlayStyles",
+      "file_type": "code",
+      "source_file": "app/page.tsx",
+      "source_location": "L114"
+    },
+    {
+      "id": "app_page_galleryoverlayvariant",
+      "label": "GalleryOverlayVariant",
+      "file_type": "code",
+      "source_file": "app/page.tsx",
+      "source_location": "L135"
+    },
+    {
+      "id": "app_page_galleryhighlight",
+      "label": "GalleryHighlight",
+      "file_type": "code",
+      "source_file": "app/page.tsx",
+      "source_location": "L137"
+    },
+    {
+      "id": "app_page_galleryhighlights",
+      "label": "galleryHighlights",
+      "file_type": "code",
+      "source_file": "app/page.tsx",
+      "source_location": "L146"
+    },
+    {
+      "id": "app_page_googledots",
+      "label": "GoogleDots()",
+      "file_type": "code",
+      "source_file": "app/page.tsx",
+      "source_location": "L181"
+    },
+    {
+      "id": "app_page_arrowicon",
+      "label": "ArrowIcon()",
+      "file_type": "code",
+      "source_file": "app/page.tsx",
+      "source_location": "L192"
+    },
+    {
+      "id": "app_page_sectionlabel",
+      "label": "SectionLabel()",
+      "file_type": "code",
+      "source_file": "app/page.tsx",
+      "source_location": "L207"
+    },
+    {
+      "id": "app_page_home",
+      "label": "Home()",
+      "file_type": "code",
+      "source_file": "app/page.tsx",
+      "source_location": "L216"
+    },
+    {
+      "id": "app_components_eventshero_tsx",
+      "label": "EventsHero.tsx",
+      "file_type": "code",
+      "source_file": "app/components/EventsHero.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "components_eventshero_eventdetail",
+      "label": "EventDetail",
+      "file_type": "code",
+      "source_file": "app/components/EventsHero.tsx",
+      "source_location": "L6"
+    },
+    {
+      "id": "components_eventshero_eventsheroprops",
+      "label": "EventsHeroProps",
+      "file_type": "code",
+      "source_file": "app/components/EventsHero.tsx",
+      "source_location": "L8"
+    },
+    {
+      "id": "components_eventshero_googledots",
+      "label": "GoogleDots()",
+      "file_type": "code",
+      "source_file": "app/components/EventsHero.tsx",
+      "source_location": "L13"
+    },
+    {
+      "id": "components_eventshero_arrowicon",
+      "label": "ArrowIcon()",
+      "file_type": "code",
+      "source_file": "app/components/EventsHero.tsx",
+      "source_location": "L24"
+    },
+    {
+      "id": "components_eventshero_eventshero",
+      "label": "EventsHero()",
+      "file_type": "code",
+      "source_file": "app/components/EventsHero.tsx",
+      "source_location": "L39"
+    },
+    {
+      "id": "app_events_page_tsx",
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "app/events/page.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "events_page_eventdetails",
+      "label": "eventDetails",
+      "file_type": "code",
+      "source_file": "app/events/page.tsx",
+      "source_location": "L9"
+    },
+    {
+      "id": "events_page_agenda",
+      "label": "agenda",
+      "file_type": "code",
+      "source_file": "app/events/page.tsx",
+      "source_location": "L18"
+    },
+    {
+      "id": "events_page_archiveitem",
+      "label": "ArchiveItem",
+      "file_type": "code",
+      "source_file": "app/events/page.tsx",
+      "source_location": "L28"
+    },
+    {
+      "id": "events_page_archive",
+      "label": "archive",
+      "file_type": "code",
+      "source_file": "app/events/page.tsx",
+      "source_location": "L35"
+    },
+    {
+      "id": "events_page_archivegallery",
+      "label": "archiveGallery",
+      "file_type": "code",
+      "source_file": "app/events/page.tsx",
+      "source_location": "L74"
+    },
+    {
+      "id": "events_page_metadata",
+      "label": "metadata",
+      "file_type": "code",
+      "source_file": "app/events/page.tsx",
+      "source_location": "L93"
+    },
+    {
+      "id": "events_page_googledots",
+      "label": "GoogleDots()",
+      "file_type": "code",
+      "source_file": "app/events/page.tsx",
+      "source_location": "L99"
+    },
+    {
+      "id": "events_page_sectionlabel",
+      "label": "SectionLabel()",
+      "file_type": "code",
+      "source_file": "app/events/page.tsx",
+      "source_location": "L110"
+    },
+    {
+      "id": "events_page_eventspage",
+      "label": "EventsPage()",
+      "file_type": "code",
+      "source_file": "app/events/page.tsx",
+      "source_location": "L119"
+    }
+  ],
+  "edges": [
+    {
+      "source": "eslint_config_mjs",
+      "target": "config",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "eslint.config.mjs",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "eslint_config_mjs",
+      "target": "core_web_vitals",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "eslint.config.mjs",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "eslint_config_mjs",
+      "target": "typescript",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "eslint.config.mjs",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "eslint_config_mjs",
+      "target": "gdgcblr_eslint_config_eslintconfig",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "eslint.config.mjs",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "next_config_ts",
+      "target": "next",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "next.config.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "next_config_ts",
+      "target": "gdgcblr_next_config_nextconfig",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next.config.ts",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "package_json",
+      "target": "gdgcblr_package_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "package_json",
+      "target": "gdgcblr_package_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "package_json",
+      "target": "gdgcblr_package_private",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "package_json",
+      "target": "gdgcblr_package_scripts",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "gdgcblr_package_scripts",
+      "target": "gdgcblr_package_scripts_dev",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "gdgcblr_package_scripts",
+      "target": "gdgcblr_package_scripts_build",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "gdgcblr_package_scripts",
+      "target": "gdgcblr_package_scripts_start",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "gdgcblr_package_scripts",
+      "target": "gdgcblr_package_scripts_lint",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "package_json",
+      "target": "gdgcblr_package_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "gdgcblr_package_dependencies",
+      "target": "gdgcblr_package_dependencies_framer_motion",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "gdgcblr_package_dependencies_framer_motion",
+      "target": "framer_motion",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L12",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "gdgcblr_package_dependencies",
+      "target": "gdgcblr_package_dependencies_next",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "gdgcblr_package_dependencies_next",
+      "target": "next",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L13",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "gdgcblr_package_dependencies",
+      "target": "gdgcblr_package_dependencies_react",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "gdgcblr_package_dependencies_react",
+      "target": "react",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L14",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "gdgcblr_package_dependencies",
+      "target": "gdgcblr_package_dependencies_react_dom",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "gdgcblr_package_dependencies_react_dom",
+      "target": "react_dom",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L15",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "package_json",
+      "target": "gdgcblr_package_devdependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "gdgcblr_package_devdependencies",
+      "target": "gdgcblr_package_devdependencies_tailwindcss_postcss",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "gdgcblr_package_devdependencies_tailwindcss_postcss",
+      "target": "tailwindcss_postcss",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L18",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "gdgcblr_package_devdependencies",
+      "target": "gdgcblr_package_devdependencies_types_node",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "gdgcblr_package_devdependencies_types_node",
+      "target": "types_node",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L19",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "gdgcblr_package_devdependencies",
+      "target": "gdgcblr_package_devdependencies_types_react",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "gdgcblr_package_devdependencies_types_react",
+      "target": "types_react",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L20",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "gdgcblr_package_devdependencies",
+      "target": "gdgcblr_package_devdependencies_types_react_dom",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "gdgcblr_package_devdependencies_types_react_dom",
+      "target": "types_react_dom",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L21",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "gdgcblr_package_devdependencies",
+      "target": "gdgcblr_package_devdependencies_eslint",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "gdgcblr_package_devdependencies_eslint",
+      "target": "eslint",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L22",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "gdgcblr_package_devdependencies",
+      "target": "gdgcblr_package_devdependencies_eslint_config_next",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "gdgcblr_package_devdependencies_eslint_config_next",
+      "target": "eslint_config_next",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L23",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "gdgcblr_package_devdependencies",
+      "target": "gdgcblr_package_devdependencies_tailwindcss",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "gdgcblr_package_devdependencies_tailwindcss",
+      "target": "tailwindcss",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L24",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "gdgcblr_package_devdependencies",
+      "target": "gdgcblr_package_devdependencies_typescript",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L25",
+      "weight": 1.0
+    },
+    {
+      "source": "gdgcblr_package_devdependencies_typescript",
+      "target": "typescript",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L25",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "postcss_config_mjs",
+      "target": "gdgcblr_postcss_config_config",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "postcss.config.mjs",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "tsconfig_json",
+      "target": "gdgcblr_tsconfig_compileroptions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "gdgcblr_tsconfig_compileroptions",
+      "target": "gdgcblr_tsconfig_compileroptions_target",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "gdgcblr_tsconfig_compileroptions",
+      "target": "gdgcblr_tsconfig_compileroptions_lib",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "gdgcblr_tsconfig_compileroptions_lib",
+      "target": "ref_dom",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L4",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "gdgcblr_tsconfig_compileroptions_lib",
+      "target": "ref_dom_iterable",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L4",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "gdgcblr_tsconfig_compileroptions_lib",
+      "target": "ref_esnext",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L4",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "gdgcblr_tsconfig_compileroptions",
+      "target": "gdgcblr_tsconfig_compileroptions_allowjs",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "gdgcblr_tsconfig_compileroptions",
+      "target": "gdgcblr_tsconfig_compileroptions_skiplibcheck",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "gdgcblr_tsconfig_compileroptions",
+      "target": "gdgcblr_tsconfig_compileroptions_strict",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "gdgcblr_tsconfig_compileroptions",
+      "target": "gdgcblr_tsconfig_compileroptions_noemit",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "gdgcblr_tsconfig_compileroptions",
+      "target": "gdgcblr_tsconfig_compileroptions_esmoduleinterop",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "gdgcblr_tsconfig_compileroptions",
+      "target": "gdgcblr_tsconfig_compileroptions_module",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "gdgcblr_tsconfig_compileroptions",
+      "target": "gdgcblr_tsconfig_compileroptions_moduleresolution",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "gdgcblr_tsconfig_compileroptions",
+      "target": "gdgcblr_tsconfig_compileroptions_resolvejsonmodule",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "gdgcblr_tsconfig_compileroptions",
+      "target": "gdgcblr_tsconfig_compileroptions_isolatedmodules",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "gdgcblr_tsconfig_compileroptions",
+      "target": "gdgcblr_tsconfig_compileroptions_jsx",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "gdgcblr_tsconfig_compileroptions",
+      "target": "gdgcblr_tsconfig_compileroptions_incremental",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "gdgcblr_tsconfig_compileroptions",
+      "target": "gdgcblr_tsconfig_compileroptions_plugins",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "gdgcblr_tsconfig_compileroptions",
+      "target": "gdgcblr_tsconfig_compileroptions_paths",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "gdgcblr_tsconfig_compileroptions_paths",
+      "target": "gdgcblr_tsconfig_paths",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "gdgcblr_tsconfig_paths",
+      "target": "ref",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L22",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "tsconfig_json",
+      "target": "gdgcblr_tsconfig_include",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L25",
+      "weight": 1.0
+    },
+    {
+      "source": "gdgcblr_tsconfig_include",
+      "target": "ref_next_env_d_ts",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L25",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "gdgcblr_tsconfig_include",
+      "target": "ref_ts",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L25",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "gdgcblr_tsconfig_include",
+      "target": "ref_tsx",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L25",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "gdgcblr_tsconfig_include",
+      "target": "ref_next_types_ts",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L25",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "gdgcblr_tsconfig_include",
+      "target": "ref_next_dev_types_ts",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L25",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "gdgcblr_tsconfig_include",
+      "target": "ref_mts",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L25",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "tsconfig_json",
+      "target": "gdgcblr_tsconfig_exclude",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "gdgcblr_tsconfig_exclude",
+      "target": "ref_node_modules",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L33",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "github_skills_idea_refine_scripts_idea_refine_sh",
+      "target": "d_college_projects_gdgcblr_github_skills_idea_refine_scripts_idea_refine_sh__entry",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".github/skills/idea-refine/scripts/idea-refine.sh",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "impeccable_live_config_json",
+      "target": "live_config_files",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".impeccable/live/config.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "live_config_files",
+      "target": "ref_app_layout_tsx",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": ".impeccable/live/config.json",
+      "source_location": "L2",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "impeccable_live_config_json",
+      "target": "live_config_insertbefore",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".impeccable/live/config.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "impeccable_live_config_json",
+      "target": "live_config_commentsyntax",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".impeccable/live/config.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "app_layout_tsx",
+      "target": "next",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/layout.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "app_layout_tsx",
+      "target": "d_college_projects_gdgcblr_app_globals_css",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/layout.tsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "app_layout_tsx",
+      "target": "app_layout_metadata",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/layout.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "app_layout_tsx",
+      "target": "app_layout_rootlayout",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/layout.tsx",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "app_page_tsx",
+      "target": "framer_motion",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/page.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "app_page_tsx",
+      "target": "image",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/page.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "app_page_tsx",
+      "target": "link",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/page.tsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "app_page_tsx",
+      "target": "app_page_utilitydetails",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/page.tsx",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "app_page_tsx",
+      "target": "app_page_initiatives",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/page.tsx",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "app_page_tsx",
+      "target": "app_page_communitystats",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/page.tsx",
+      "source_location": "L46",
+      "weight": 1.0
+    },
+    {
+      "source": "app_page_tsx",
+      "target": "app_page_herosignals",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/page.tsx",
+      "source_location": "L53",
+      "weight": 1.0
+    },
+    {
+      "source": "app_page_tsx",
+      "target": "app_page_communitycall",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/page.tsx",
+      "source_location": "L72",
+      "weight": 1.0
+    },
+    {
+      "source": "app_page_tsx",
+      "target": "app_page_communitycalls",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/page.tsx",
+      "source_location": "L83",
+      "weight": 1.0
+    },
+    {
+      "source": "app_page_tsx",
+      "target": "app_page_galleryoverlaystyles",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/page.tsx",
+      "source_location": "L114",
+      "weight": 1.0
+    },
+    {
+      "source": "app_page_tsx",
+      "target": "app_page_galleryoverlayvariant",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/page.tsx",
+      "source_location": "L135",
+      "weight": 1.0
+    },
+    {
+      "source": "app_page_tsx",
+      "target": "app_page_galleryhighlight",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/page.tsx",
+      "source_location": "L137",
+      "weight": 1.0
+    },
+    {
+      "source": "app_page_tsx",
+      "target": "app_page_galleryhighlights",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/page.tsx",
+      "source_location": "L146",
+      "weight": 1.0
+    },
+    {
+      "source": "app_page_tsx",
+      "target": "app_page_googledots",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/page.tsx",
+      "source_location": "L181",
+      "weight": 1.0
+    },
+    {
+      "source": "app_page_tsx",
+      "target": "app_page_arrowicon",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/page.tsx",
+      "source_location": "L192",
+      "weight": 1.0
+    },
+    {
+      "source": "app_page_tsx",
+      "target": "app_page_sectionlabel",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/page.tsx",
+      "source_location": "L207",
+      "weight": 1.0
+    },
+    {
+      "source": "app_page_tsx",
+      "target": "app_page_home",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/page.tsx",
+      "source_location": "L216",
+      "weight": 1.0
+    },
+    {
+      "source": "app_components_eventshero_tsx",
+      "target": "framer_motion",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/components/EventsHero.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "app_components_eventshero_tsx",
+      "target": "image",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/components/EventsHero.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "app_components_eventshero_tsx",
+      "target": "components_eventshero_eventdetail",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/components/EventsHero.tsx",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "app_components_eventshero_tsx",
+      "target": "components_eventshero_eventsheroprops",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/components/EventsHero.tsx",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "app_components_eventshero_tsx",
+      "target": "components_eventshero_googledots",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/components/EventsHero.tsx",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "app_components_eventshero_tsx",
+      "target": "components_eventshero_arrowicon",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/components/EventsHero.tsx",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "app_components_eventshero_tsx",
+      "target": "components_eventshero_eventshero",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/components/EventsHero.tsx",
+      "source_location": "L39",
+      "weight": 1.0
+    },
+    {
+      "source": "app_events_page_tsx",
+      "target": "next",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/events/page.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "app_events_page_tsx",
+      "target": "image",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/events/page.tsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "app_events_page_tsx",
+      "target": "link",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/events/page.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "app_events_page_tsx",
+      "target": "app_components_eventshero_tsx",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/events/page.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "app_events_page_tsx",
+      "target": "events_page_eventdetails",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/events/page.tsx",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "app_events_page_tsx",
+      "target": "events_page_agenda",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/events/page.tsx",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "app_events_page_tsx",
+      "target": "events_page_archiveitem",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/events/page.tsx",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "app_events_page_tsx",
+      "target": "events_page_archive",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/events/page.tsx",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "app_events_page_tsx",
+      "target": "events_page_archivegallery",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/events/page.tsx",
+      "source_location": "L74",
+      "weight": 1.0
+    },
+    {
+      "source": "app_events_page_tsx",
+      "target": "events_page_metadata",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/events/page.tsx",
+      "source_location": "L93",
+      "weight": 1.0
+    },
+    {
+      "source": "app_events_page_tsx",
+      "target": "events_page_googledots",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/events/page.tsx",
+      "source_location": "L99",
+      "weight": 1.0
+    },
+    {
+      "source": "app_events_page_tsx",
+      "target": "events_page_sectionlabel",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/events/page.tsx",
+      "source_location": "L110",
+      "weight": 1.0
+    },
+    {
+      "source": "app_events_page_tsx",
+      "target": "events_page_eventspage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/events/page.tsx",
+      "source_location": "L119",
+      "weight": 1.0
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

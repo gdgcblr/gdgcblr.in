@@ -1,11 +1,11 @@
 @import "tailwindcss";
 
 :root {
-  --color-background: #ffffff;
-  --color-surface: #f8f9fa;
+  --color-background: #f6f7fb;
+  --color-surface: #ffffff;
   --color-border: #dadce0;
   --color-heading: #202124;
-  --color-body: #5f6368;
+  --color-body: #3c4043;
   --color-accent: #1a73e8;
 }
 
@@ -22,7 +22,7 @@ html {
 
 body {
   margin: 0;
-  background: #ffffff;
+  background: #f6f7fb;
   color: #202124;
   font-family: "Google Sans", "Inter", "Segoe UI", Arial, sans-serif;
 }
@@ -35,4 +35,43 @@ body {
 :focus-visible {
   outline: 2px solid #1a73e8;
   outline-offset: 3px;
+}
+
+/* ── Hero aurora ── */
+.aurora-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(clamp(60px, 10vw, 120px));
+  opacity: 0.18;
+  will-change: transform;
+}
+
+@keyframes aurora-1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(8vw, -5vh) scale(1.18); }
+  66% { transform: translate(-5vw, 4vh) scale(0.88); }
+}
+
+@keyframes aurora-2 {
+  0%, 100% { transform: translate(0, 0) scale(1.1); }
+  33% { transform: translate(-7vw, 7vh) scale(0.82); }
+  66% { transform: translate(6vw, -4vh) scale(1.06); }
+}
+
+@keyframes aurora-3 {
+  0%, 100% { transform: translate(0, 0) scale(0.92); }
+  33% { transform: translate(6vw, 6vh) scale(1.14); }
+  66% { transform: translate(-7vw, -3vh) scale(1.02); }
+}
+
+@keyframes aurora-4 {
+  0%, 100% { transform: translate(0, 0) scale(1.06); }
+  33% { transform: translate(-4vw, -6vh) scale(0.88); }
+  66% { transform: translate(5vw, 3vh) scale(1.18); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aurora-orb {
+    animation: none !important;
+  }
 }

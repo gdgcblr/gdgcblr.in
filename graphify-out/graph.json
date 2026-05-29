@@ -1,0 +1,1126 @@
+{
+  "schema_version": 1,
+  "directed": false,
+  "root_path": "D:\\College\\Projects\\gdgcblr",
+  "extractor_version": 63,
+  "nodes": [
+    {
+      "id": "eventshero",
+      "label": "EventsHero.tsx",
+      "file_type": "code",
+      "source_file": "D:/College/Projects/gdgcblr/app/components/EventsHero.tsx",
+      "source_location": "L1",
+      "layer": "base",
+      "provenance": [
+        {
+          "capability_id": "builtin:extract:typescript",
+          "stage": "extract",
+          "source_file": "D:/College/Projects/gdgcblr/app/components/EventsHero.tsx",
+          "source_location": "L1"
+        }
+      ],
+      "community": 0
+    },
+    {
+      "id": "eventshero_googledots",
+      "label": "GoogleDots()",
+      "file_type": "code",
+      "source_file": "D:/College/Projects/gdgcblr/app/components/EventsHero.tsx",
+      "source_location": "L13-L22",
+      "layer": "base",
+      "provenance": [
+        {
+          "capability_id": "builtin:extract:typescript",
+          "stage": "extract",
+          "source_file": "D:/College/Projects/gdgcblr/app/components/EventsHero.tsx",
+          "source_location": "L13"
+        }
+      ],
+      "snippet": "function GoogleDots() {\n  return (\n    <span className=\"inline-flex items-center gap-1.5\" aria-hidden=\"true\">\n      <span className=\"h-2 w-2 rounded-full bg-[#4285F4]\" />\n      <span className=\"h-2 w-2 rounded-full bg-[#EA4335]\" />\n      <span className=\"h-2 w-2 rounded-full bg-[#FBBC04]\" />\n      <span className=\"h-2 w-2 rounded-full bg-[#34A853]\" />\n    </span>\n  );\n}",
+      "node_kind": "component",
+      "community": 0
+    },
+    {
+      "id": "eventshero_arrowicon",
+      "label": "ArrowIcon()",
+      "file_type": "code",
+      "source_file": "D:/College/Projects/gdgcblr/app/components/EventsHero.tsx",
+      "source_location": "L24-L37",
+      "layer": "base",
+      "provenance": [
+        {
+          "capability_id": "builtin:extract:typescript",
+          "stage": "extract",
+          "source_file": "D:/College/Projects/gdgcblr/app/components/EventsHero.tsx",
+          "source_location": "L24"
+        }
+      ],
+      "snippet": "function ArrowIcon() {\n  return (\n    <svg viewBox=\"0 0 20 20\" aria-hidden=\"true\" className=\"h-4 w-4\">\n      <path\n        d=\"M5 10h9M10.5 5.5 15 10l-4.5 4.5\"\n        fill=\"none\"\n        stroke=\"currentColor\"\n        strokeLinecap=\"round\"\n        strokeLinejoin=\"round\"\n        strokeWidth=\"1.8\"\n      />\n    </svg>\n  );\n}",
+      "node_kind": "component",
+      "community": 0
+    },
+    {
+      "id": "eventshero_eventshero",
+      "label": "EventsHero()",
+      "file_type": "code",
+      "source_file": "D:/College/Projects/gdgcblr/app/components/EventsHero.tsx",
+      "source_location": "L39-L186",
+      "layer": "base",
+      "provenance": [
+        {
+          "capability_id": "builtin:extract:typescript",
+          "stage": "extract",
+          "source_file": "D:/College/Projects/gdgcblr/app/components/EventsHero.tsx",
+          "source_location": "L39"
+        }
+      ],
+      "snippet": "export default function EventsHero({ deployFestHref, eventDetails }: EventsHeroProps) {\n  const shouldReduceMotion = useReducedMotion();\n\n  return (\n    <section className=\"mx-auto grid min-h-[calc(100vh-4.25rem)] w-full max-w-7xl items-center gap-12 px-5 py-16 sm:px-8 sm:py-20 lg:min-h-0 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:gap-12 lg:px-12\">\n      <div>\n        <div className=\"mb-6 inline-flex items-center gap-3 rounded-full border border-[#DADCE0] bg-[#FFFFFF] px-4 py-2 text-sm font-semibold text-[#3C4043]\">\n          <GoogleDots />\n          <span>Events calendar</span>\n        </div>\n        <h1 className=\"text-[clamp(2.5rem,6vw,4.5rem)] font-semibold leading-[1.02] tracking-tight text-[#202124]\">\n          DeployFest and GDG Cloud Bengaluru events.\n        </h1>\n        <p className=\"mt-6 max-w-3xl text-lg leading-8 text-[#3C4043]\">\n          A year-round series of build days, labs, and community meetups.\n          DeployFest is the flagship buildathon with a focused sprint and\n          live demos.\n        </p>\n        <div className=\"mt-8 flex flex-col gap-3 sm:flex-row\">\n          <motion.a\n            href={deployFestHref}\n            className=\"inline-flex h-12 items-center justify-center gap-2 rounded-full bg-[#1A73E8] px-7 text-sm font-semibold text-white shadow-[0_12px_28px_rgba(26,115,232,0.3)] transition-opacity hover:opacity-90\"\n            whileHover={shouldReduceMotion ? undefined : { y: -2 }}\n            whileTap={shouldReduceMotion ? undefined : { scale: 0.98 }}\n          >",
+      "node_kind": "function",
+      "framework": "nextjs",
+      "framework_role": "next_client_component",
+      "runtime_boundary": "client",
+      "community": 0
+    },
+    {
+      "id": "page",
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "D:/College/Projects/gdgcblr/app/page.tsx",
+      "source_location": "L1",
+      "layer": "base",
+      "provenance": [
+        {
+          "capability_id": "builtin:extract:typescript",
+          "stage": "extract",
+          "source_file": "D:/College/Projects/gdgcblr/app/page.tsx",
+          "source_location": "L1"
+        }
+      ],
+      "community": 1
+    },
+    {
+      "id": "page_googledots",
+      "label": "GoogleDots()",
+      "file_type": "code",
+      "source_file": "D:/College/Projects/gdgcblr/app/page.tsx",
+      "source_location": "L181-L190",
+      "layer": "base",
+      "provenance": [
+        {
+          "capability_id": "builtin:extract:typescript",
+          "stage": "extract",
+          "source_file": "D:/College/Projects/gdgcblr/app/page.tsx",
+          "source_location": "L181"
+        }
+      ],
+      "snippet": "function GoogleDots() {\n  return (\n    <span className=\"inline-flex items-center gap-1.5\" aria-hidden=\"true\">\n      <span className=\"h-2 w-2 rounded-full bg-[#4285F4]\" />\n      <span className=\"h-2 w-2 rounded-full bg-[#EA4335]\" />\n      <span className=\"h-2 w-2 rounded-full bg-[#FBBC04]\" />\n      <span className=\"h-2 w-2 rounded-full bg-[#34A853]\" />\n    </span>\n  );\n}",
+      "node_kind": "component",
+      "community": 1
+    },
+    {
+      "id": "page_sectionlabel",
+      "label": "SectionLabel()",
+      "file_type": "code",
+      "source_file": "D:/College/Projects/gdgcblr/app/page.tsx",
+      "source_location": "L207-L214",
+      "layer": "base",
+      "provenance": [
+        {
+          "capability_id": "builtin:extract:typescript",
+          "stage": "extract",
+          "source_file": "D:/College/Projects/gdgcblr/app/page.tsx",
+          "source_location": "L207"
+        }
+      ],
+      "snippet": "function SectionLabel({ children }: { children: React.ReactNode }) {\n  return (\n    <p className=\"inline-flex items-center gap-3 text-sm font-semibold tracking-tight text-[#1A73E8]\">\n      <GoogleDots />\n      {children}\n    </p>\n  );\n}",
+      "node_kind": "component",
+      "community": 7
+    },
+    {
+      "id": "page_eventspage",
+      "label": "EventsPage()",
+      "file_type": "code",
+      "source_file": "D:/College/Projects/gdgcblr/app/events/page.tsx",
+      "source_location": "L119-L234",
+      "layer": "base",
+      "provenance": [
+        {
+          "capability_id": "builtin:extract:typescript",
+          "stage": "extract",
+          "source_file": "D:/College/Projects/gdgcblr/app/events/page.tsx",
+          "source_location": "L119"
+        }
+      ],
+      "snippet": "export default function EventsPage() {\n  return (\n    <div className=\"min-h-screen bg-[#F6F7FB] text-[#202124]\">\n      <header className=\"sticky top-0 z-50 border-b border-[#DADCE0] bg-[#FFFFFF]/92 backdrop-blur\">\n        <div className=\"grid h-1 grid-cols-4\" aria-hidden=\"true\">\n          <span className=\"bg-[#4285F4]\" />\n          <span className=\"bg-[#EA4335]\" />\n          <span className=\"bg-[#FBBC04]\" />\n          <span className=\"bg-[#34A853]\" />\n        </div>\n        <nav className=\"mx-auto flex h-16 w-full max-w-7xl items-center justify-between px-5 sm:px-8 lg:px-12\">\n          <Link href=\"/\" className=\"flex items-center\" aria-label=\"GDG Cloud Bengaluru home\">\n            <Image src=\"/logo.png\" alt=\"GDG Cloud Bengaluru\" width={195} height={30} priority className=\"h-7 w-auto\" />\n          </Link>\n          <div className=\"hidden items-center gap-8 md:flex\">\n            <Link href=\"/#top\" className=\"text-sm font-medium text-[#3C4043] hover:text-[#202124]\">Spotlight</Link>\n            <a href=\"#agenda\" className=\"text-sm font-medium text-[#3C4043] hover:text-[#202124]\">Agenda</a>\n            <a href=\"#archive\" className=\"text-sm font-medium text-[#3C4043] hover:text-[#202124]\">Hall of Fame</a>\n            <Link href=\"/#calls-forms\" className=\"text-sm font-medium text-[#3C4043] hover:text-[#202124]\">CFP & Venue</Link>\n            <span className=\"text-sm font-semibold text-[#202124]\">Events</span>\n          </div>\n          <div className=\"flex items-center gap-4\">\n            <Link href=\"/\" className=\"hidden text-sm font-medium text-[#3C4043] hover:text-[#202124] sm:inline md:hidden\">Home</Link>\n            <a href={deployFestHref} className=\"inline-flex h-10 items-center rounded-full bg-[#1A73E8] px-5 text-sm font-semibold text-white shadow-[0_10px_24px_rgba(26,115,232,0.25)] transition-opacity hover:opacity-90\">Register</a>\n          </div>",
+      "node_kind": "component",
+      "community": 7
+    },
+    {
+      "id": "d_college_projects_gdgcblr_nextjs_route_events",
+      "label": "/events",
+      "file_type": "code",
+      "source_file": "D:\\College\\Projects\\gdgcblr\\app",
+      "source_location": "L1",
+      "layer": "base",
+      "node_kind": "route",
+      "framework": "nextjs",
+      "framework_role": "next_route",
+      "route_path": "/events",
+      "provenance": [
+        {
+          "capability_id": "builtin:normalize:legacy-extraction",
+          "stage": "normalize",
+          "source_file": "D:\\College\\Projects\\gdgcblr\\app",
+          "source_location": "L1"
+        }
+      ],
+      "community": 3
+    },
+    {
+      "id": "d_college_projects_gdgcblr_nextjs_page_events",
+      "label": "page /events",
+      "file_type": "code",
+      "source_file": "D:\\College\\Projects\\gdgcblr\\app\\events\\page.tsx",
+      "source_location": "L1",
+      "layer": "base",
+      "provenance": [
+        {
+          "capability_id": "builtin:extract:typescript",
+          "stage": "extract",
+          "source_file": "D:\\College\\Projects\\gdgcblr\\app\\events\\page.tsx",
+          "source_location": "L1"
+        }
+      ],
+      "node_kind": "component",
+      "framework": "nextjs",
+      "framework_role": "next_page",
+      "route_path": "/events",
+      "runtime_boundary": "server",
+      "community": 2
+    },
+    {
+      "id": "d_college_projects_gdgcblr_nextjs_layout",
+      "label": "layout /",
+      "file_type": "code",
+      "source_file": "D:\\College\\Projects\\gdgcblr\\app\\layout.tsx",
+      "source_location": "L1",
+      "layer": "base",
+      "provenance": [
+        {
+          "capability_id": "builtin:extract:typescript",
+          "stage": "extract",
+          "source_file": "D:\\College\\Projects\\gdgcblr\\app\\layout.tsx",
+          "source_location": "L1"
+        }
+      ],
+      "node_kind": "component",
+      "framework": "nextjs",
+      "framework_role": "next_layout",
+      "route_path": "/",
+      "community": 3
+    },
+    {
+      "id": "d_college_projects_gdgcblr_app_components_eventshero_tsx_eventshero",
+      "label": "EventsHero()",
+      "file_type": "code",
+      "source_file": "D:\\College\\Projects\\gdgcblr\\app\\components\\EventsHero.tsx",
+      "source_location": "L39",
+      "layer": "base",
+      "provenance": [
+        {
+          "capability_id": "builtin:extract:typescript",
+          "stage": "extract",
+          "source_file": "D:\\College\\Projects\\gdgcblr\\app\\components\\EventsHero.tsx",
+          "source_location": "L39"
+        }
+      ],
+      "node_kind": "function",
+      "framework": "nextjs",
+      "framework_role": "next_client_component",
+      "runtime_boundary": "client",
+      "community": 2
+    },
+    {
+      "id": "layout",
+      "label": "layout.tsx",
+      "file_type": "code",
+      "source_file": "D:/College/Projects/gdgcblr/app/layout.tsx",
+      "source_location": "L1",
+      "layer": "base",
+      "provenance": [
+        {
+          "capability_id": "builtin:extract:typescript",
+          "stage": "extract",
+          "source_file": "D:/College/Projects/gdgcblr/app/layout.tsx",
+          "source_location": "L1"
+        }
+      ],
+      "community": 5
+    },
+    {
+      "id": "layout_rootlayout",
+      "label": "RootLayout()",
+      "file_type": "code",
+      "source_file": "D:/College/Projects/gdgcblr/app/layout.tsx",
+      "source_location": "L10-L22",
+      "layer": "base",
+      "provenance": [
+        {
+          "capability_id": "builtin:extract:typescript",
+          "stage": "extract",
+          "source_file": "D:/College/Projects/gdgcblr/app/layout.tsx",
+          "source_location": "L10"
+        }
+      ],
+      "snippet": "export default function RootLayout({\n  children,\n}: Readonly<{\n  children: React.ReactNode;\n}>) {\n  return (\n    <html lang=\"en\" className=\"h-full antialiased\">\n      <body className=\"min-h-full bg-background text-foreground font-sans\">\n        {children}\n      </body>\n    </html>\n  );\n}",
+      "node_kind": "component",
+      "community": 5
+    },
+    {
+      "id": "d_college_projects_gdgcblr_nextjs_route",
+      "label": "/",
+      "file_type": "code",
+      "source_file": "D:\\College\\Projects\\gdgcblr\\app",
+      "source_location": "L1",
+      "layer": "base",
+      "node_kind": "route",
+      "framework": "nextjs",
+      "framework_role": "next_route",
+      "route_path": "/",
+      "provenance": [
+        {
+          "capability_id": "builtin:normalize:legacy-extraction",
+          "stage": "normalize",
+          "source_file": "D:\\College\\Projects\\gdgcblr\\app",
+          "source_location": "L1"
+        }
+      ],
+      "community": 4
+    },
+    {
+      "id": "page_arrowicon",
+      "label": "ArrowIcon()",
+      "file_type": "code",
+      "source_file": "D:/College/Projects/gdgcblr/app/page.tsx",
+      "source_location": "L192-L205",
+      "layer": "base",
+      "provenance": [
+        {
+          "capability_id": "builtin:extract:typescript",
+          "stage": "extract",
+          "source_file": "D:/College/Projects/gdgcblr/app/page.tsx",
+          "source_location": "L192"
+        }
+      ],
+      "snippet": "function ArrowIcon() {\n  return (\n    <svg viewBox=\"0 0 20 20\" aria-hidden=\"true\" className=\"h-4 w-4\">\n      <path\n        d=\"M5 10h9M10.5 5.5 15 10l-4.5 4.5\"\n        fill=\"none\"\n        stroke=\"currentColor\"\n        strokeLinecap=\"round\"\n        strokeLinejoin=\"round\"\n        strokeWidth=\"1.8\"\n      />\n    </svg>\n  );\n}",
+      "node_kind": "component",
+      "community": 1
+    },
+    {
+      "id": "page_home",
+      "label": "Home()",
+      "file_type": "code",
+      "source_file": "D:/College/Projects/gdgcblr/app/page.tsx",
+      "source_location": "L216-L786",
+      "layer": "base",
+      "provenance": [
+        {
+          "capability_id": "builtin:extract:typescript",
+          "stage": "extract",
+          "source_file": "D:/College/Projects/gdgcblr/app/page.tsx",
+          "source_location": "L216"
+        }
+      ],
+      "snippet": "export default function Home() {\n  const shouldReduceMotion = useReducedMotion();\n\n  return (\n    <div className=\"min-h-screen bg-[#F6F7FB] text-[#202124]\">\n      <header className=\"sticky top-0 z-50 border-b border-[#DADCE0] bg-[#FFFFFF]/92 backdrop-blur\">\n        <div className=\"grid h-1 grid-cols-4\" aria-hidden=\"true\">\n          <span className=\"bg-[#4285F4]\" />\n          <span className=\"bg-[#EA4335]\" />\n          <span className=\"bg-[#FBBC04]\" />\n          <span className=\"bg-[#34A853]\" />\n        </div>\n        <nav className=\"mx-auto flex h-16 w-full max-w-7xl items-center justify-between px-5 sm:px-8 lg:px-12\">\n          <a\n            href=\"#top\"\n            className=\"flex items-center\"\n            aria-label=\"GDG Cloud Bengaluru home\"\n          >\n            <Image\n              src=\"/logo.png\"\n              alt=\"GDG Cloud Bengaluru\"\n              width={195}\n              height={30}\n              priority\n              className=\"h-7 w-auto\"",
+      "node_kind": "component",
+      "framework": "nextjs",
+      "framework_role": "next_client_component",
+      "runtime_boundary": "client",
+      "community": 0
+    },
+    {
+      "id": "d_college_projects_gdgcblr_nextjs_page",
+      "label": "page /",
+      "file_type": "code",
+      "source_file": "D:\\College\\Projects\\gdgcblr\\app\\page.tsx",
+      "source_location": "L1",
+      "layer": "base",
+      "provenance": [
+        {
+          "capability_id": "builtin:extract:typescript",
+          "stage": "extract",
+          "source_file": "D:\\College\\Projects\\gdgcblr\\app\\page.tsx",
+          "source_location": "L1"
+        }
+      ],
+      "node_kind": "component",
+      "framework": "nextjs",
+      "framework_role": "next_page",
+      "route_path": "/",
+      "runtime_boundary": "client",
+      "community": 4
+    },
+    {
+      "id": "next_env_d",
+      "label": "next-env.d.ts",
+      "file_type": "code",
+      "source_file": "D:/College/Projects/gdgcblr/next-env.d.ts",
+      "source_location": "L1",
+      "layer": "base",
+      "provenance": [
+        {
+          "capability_id": "builtin:extract:typescript",
+          "stage": "extract",
+          "source_file": "D:/College/Projects/gdgcblr/next-env.d.ts",
+          "source_location": "L1"
+        }
+      ],
+      "community": 13
+    },
+    {
+      "id": "next_config",
+      "label": "next.config.ts",
+      "file_type": "code",
+      "source_file": "D:/College/Projects/gdgcblr/next.config.ts",
+      "source_location": "L1",
+      "layer": "base",
+      "provenance": [
+        {
+          "capability_id": "builtin:extract:typescript",
+          "stage": "extract",
+          "source_file": "D:/College/Projects/gdgcblr/next.config.ts",
+          "source_location": "L1"
+        }
+      ],
+      "community": 6
+    },
+    {
+      "id": "file",
+      "file_bytes": 391,
+      "content_type": "image/svg+xml",
+      "label": "file.svg",
+      "file_type": "image",
+      "source_file": "D:/College/Projects/gdgcblr/public/file.svg",
+      "source_location": "L1",
+      "layer": "base",
+      "provenance": [
+        {
+          "capability_id": "builtin:extract:image",
+          "stage": "extract",
+          "source_file": "D:/College/Projects/gdgcblr/public/file.svg",
+          "source_location": "L1"
+        }
+      ],
+      "community": 11
+    },
+    {
+      "id": "cfcsfs",
+      "file_bytes": 3770648,
+      "content_type": "image/jpeg",
+      "label": "cfcsfs.jpg",
+      "file_type": "image",
+      "source_file": "D:/College/Projects/gdgcblr/public/gallery/cfcsfs.jpg",
+      "source_location": "L1",
+      "layer": "base",
+      "provenance": [
+        {
+          "capability_id": "builtin:extract:image",
+          "stage": "extract",
+          "source_file": "D:/College/Projects/gdgcblr/public/gallery/cfcsfs.jpg",
+          "source_location": "L1"
+        }
+      ],
+      "community": 8
+    },
+    {
+      "id": "cloudforall",
+      "file_bytes": 2796272,
+      "content_type": "image/jpeg",
+      "label": "cloudforall.jpg",
+      "file_type": "image",
+      "source_file": "D:/College/Projects/gdgcblr/public/gallery/cloudforall.jpg",
+      "source_location": "L1",
+      "layer": "base",
+      "provenance": [
+        {
+          "capability_id": "builtin:extract:image",
+          "stage": "extract",
+          "source_file": "D:/College/Projects/gdgcblr/public/gallery/cloudforall.jpg",
+          "source_location": "L1"
+        }
+      ],
+      "community": 9
+    },
+    {
+      "id": "community_day",
+      "file_bytes": 14264763,
+      "content_type": "image/jpeg",
+      "label": "community-day.jpg",
+      "file_type": "image",
+      "source_file": "D:/College/Projects/gdgcblr/public/gallery/community-day.jpg",
+      "source_location": "L1",
+      "layer": "base",
+      "provenance": [
+        {
+          "capability_id": "builtin:extract:image",
+          "stage": "extract",
+          "source_file": "D:/College/Projects/gdgcblr/public/gallery/community-day.jpg",
+          "source_location": "L1"
+        }
+      ],
+      "community": 10
+    },
+    {
+      "id": "observability",
+      "file_bytes": 2165533,
+      "content_type": "image/jpeg",
+      "label": "observability.jpg",
+      "file_type": "image",
+      "source_file": "D:/College/Projects/gdgcblr/public/gallery/observability.jpg",
+      "source_location": "L1",
+      "layer": "base",
+      "provenance": [
+        {
+          "capability_id": "builtin:extract:image",
+          "stage": "extract",
+          "source_file": "D:/College/Projects/gdgcblr/public/gallery/observability.jpg",
+          "source_location": "L1"
+        }
+      ],
+      "community": 14
+    },
+    {
+      "id": "globe",
+      "file_bytes": 1035,
+      "content_type": "image/svg+xml",
+      "label": "globe.svg",
+      "file_type": "image",
+      "source_file": "D:/College/Projects/gdgcblr/public/globe.svg",
+      "source_location": "L1",
+      "layer": "base",
+      "provenance": [
+        {
+          "capability_id": "builtin:extract:image",
+          "stage": "extract",
+          "source_file": "D:/College/Projects/gdgcblr/public/globe.svg",
+          "source_location": "L1"
+        }
+      ],
+      "community": 12
+    },
+    {
+      "id": "next",
+      "file_bytes": 1375,
+      "content_type": "image/svg+xml",
+      "label": "next.svg",
+      "file_type": "image",
+      "source_file": "D:/College/Projects/gdgcblr/public/next.svg",
+      "source_location": "L1",
+      "layer": "base",
+      "provenance": [
+        {
+          "capability_id": "builtin:extract:image",
+          "stage": "extract",
+          "source_file": "D:/College/Projects/gdgcblr/public/next.svg",
+          "source_location": "L1"
+        }
+      ],
+      "community": 6
+    },
+    {
+      "id": "vercel",
+      "file_bytes": 128,
+      "content_type": "image/svg+xml",
+      "label": "vercel.svg",
+      "file_type": "image",
+      "source_file": "D:/College/Projects/gdgcblr/public/vercel.svg",
+      "source_location": "L1",
+      "layer": "base",
+      "provenance": [
+        {
+          "capability_id": "builtin:extract:image",
+          "stage": "extract",
+          "source_file": "D:/College/Projects/gdgcblr/public/vercel.svg",
+          "source_location": "L1"
+        }
+      ],
+      "community": 15
+    },
+    {
+      "id": "window",
+      "file_bytes": 385,
+      "content_type": "image/svg+xml",
+      "label": "window.svg",
+      "file_type": "image",
+      "source_file": "D:/College/Projects/gdgcblr/public/window.svg",
+      "source_location": "L1",
+      "layer": "base",
+      "provenance": [
+        {
+          "capability_id": "builtin:extract:image",
+          "stage": "extract",
+          "source_file": "D:/College/Projects/gdgcblr/public/window.svg",
+          "source_location": "L1"
+        }
+      ],
+      "community": 16
+    }
+  ],
+  "links": [
+    {
+      "source": "eventshero",
+      "target": "eventshero_googledots",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:/College/Projects/gdgcblr/app/components/EventsHero.tsx",
+      "source_location": "L13",
+      "layer": "base",
+      "provenance": [
+        {
+          "capability_id": "builtin:extract:typescript",
+          "stage": "extract",
+          "source_file": "D:/College/Projects/gdgcblr/app/components/EventsHero.tsx",
+          "source_location": "L13"
+        }
+      ]
+    },
+    {
+      "source": "eventshero",
+      "target": "eventshero_arrowicon",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:/College/Projects/gdgcblr/app/components/EventsHero.tsx",
+      "source_location": "L24",
+      "layer": "base",
+      "provenance": [
+        {
+          "capability_id": "builtin:extract:typescript",
+          "stage": "extract",
+          "source_file": "D:/College/Projects/gdgcblr/app/components/EventsHero.tsx",
+          "source_location": "L24"
+        }
+      ]
+    },
+    {
+      "source": "eventshero",
+      "target": "eventshero_eventshero",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:/College/Projects/gdgcblr/app/components/EventsHero.tsx",
+      "source_location": "L39",
+      "layer": "base",
+      "provenance": [
+        {
+          "capability_id": "builtin:extract:typescript",
+          "stage": "extract",
+          "source_file": "D:/College/Projects/gdgcblr/app/components/EventsHero.tsx",
+          "source_location": "L39"
+        }
+      ]
+    },
+    {
+      "source": "eventshero_eventshero",
+      "target": "eventshero_googledots",
+      "relation": "renders",
+      "confidence": "EXTRACTED",
+      "source_file": "D:/College/Projects/gdgcblr/app/components/EventsHero.tsx",
+      "source_location": "L39",
+      "layer": "base",
+      "provenance": [
+        {
+          "capability_id": "builtin:extract:typescript",
+          "stage": "extract",
+          "source_file": "D:/College/Projects/gdgcblr/app/components/EventsHero.tsx",
+          "source_location": "L39"
+        }
+      ]
+    },
+    {
+      "source": "eventshero_eventshero",
+      "target": "eventshero_arrowicon",
+      "relation": "renders",
+      "confidence": "EXTRACTED",
+      "source_file": "D:/College/Projects/gdgcblr/app/components/EventsHero.tsx",
+      "source_location": "L39",
+      "layer": "base",
+      "provenance": [
+        {
+          "capability_id": "builtin:extract:typescript",
+          "stage": "extract",
+          "source_file": "D:/College/Projects/gdgcblr/app/components/EventsHero.tsx",
+          "source_location": "L39"
+        }
+      ]
+    },
+    {
+      "source": "page",
+      "target": "next",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "D:/College/Projects/gdgcblr/app/events/page.tsx",
+      "source_location": "L1",
+      "layer": "base",
+      "provenance": [
+        {
+          "capability_id": "builtin:extract:typescript",
+          "stage": "extract",
+          "source_file": "D:/College/Projects/gdgcblr/app/events/page.tsx",
+          "source_location": "L1"
+        }
+      ]
+    },
+    {
+      "source": "page",
+      "target": "eventshero",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "D:/College/Projects/gdgcblr/app/events/page.tsx",
+      "source_location": "L4",
+      "layer": "base",
+      "provenance": [
+        {
+          "capability_id": "builtin:extract:typescript",
+          "stage": "extract",
+          "source_file": "D:/College/Projects/gdgcblr/app/events/page.tsx",
+          "source_location": "L4"
+        }
+      ]
+    },
+    {
+      "source": "page",
+      "target": "page_googledots",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:/College/Projects/gdgcblr/app/page.tsx",
+      "source_location": "L181",
+      "layer": "base",
+      "provenance": [
+        {
+          "capability_id": "builtin:extract:typescript",
+          "stage": "extract",
+          "source_file": "D:/College/Projects/gdgcblr/app/page.tsx",
+          "source_location": "L181"
+        }
+      ]
+    },
+    {
+      "source": "page",
+      "target": "page_sectionlabel",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:/College/Projects/gdgcblr/app/page.tsx",
+      "source_location": "L207",
+      "layer": "base",
+      "provenance": [
+        {
+          "capability_id": "builtin:extract:typescript",
+          "stage": "extract",
+          "source_file": "D:/College/Projects/gdgcblr/app/page.tsx",
+          "source_location": "L207"
+        }
+      ]
+    },
+    {
+      "source": "page_sectionlabel",
+      "target": "eventshero_googledots",
+      "relation": "renders",
+      "confidence": "EXTRACTED",
+      "source_file": "D:/College/Projects/gdgcblr/app/page.tsx",
+      "source_location": "L207",
+      "layer": "base",
+      "provenance": [
+        {
+          "capability_id": "builtin:extract:typescript",
+          "stage": "extract",
+          "source_file": "D:/College/Projects/gdgcblr/app/page.tsx",
+          "source_location": "L207"
+        }
+      ]
+    },
+    {
+      "source": "page",
+      "target": "page_eventspage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:/College/Projects/gdgcblr/app/events/page.tsx",
+      "source_location": "L119",
+      "layer": "base",
+      "provenance": [
+        {
+          "capability_id": "builtin:extract:typescript",
+          "stage": "extract",
+          "source_file": "D:/College/Projects/gdgcblr/app/events/page.tsx",
+          "source_location": "L119"
+        }
+      ]
+    },
+    {
+      "source": "page_eventspage",
+      "target": "page_sectionlabel",
+      "relation": "renders",
+      "confidence": "EXTRACTED",
+      "source_file": "D:/College/Projects/gdgcblr/app/events/page.tsx",
+      "source_location": "L119",
+      "layer": "base",
+      "provenance": [
+        {
+          "capability_id": "builtin:extract:typescript",
+          "stage": "extract",
+          "source_file": "D:/College/Projects/gdgcblr/app/events/page.tsx",
+          "source_location": "L119"
+        }
+      ]
+    },
+    {
+      "source": "d_college_projects_gdgcblr_nextjs_route_events",
+      "target": "d_college_projects_gdgcblr_nextjs_page_events",
+      "relation": "depends_on",
+      "confidence": "EXTRACTED",
+      "source_file": "D:/College/Projects/gdgcblr/app/events/page.tsx",
+      "source_location": "L1",
+      "layer": "base",
+      "provenance": [
+        {
+          "capability_id": "builtin:extract:typescript",
+          "stage": "extract",
+          "source_file": "D:/College/Projects/gdgcblr/app/events/page.tsx",
+          "source_location": "L1"
+        }
+      ]
+    },
+    {
+      "source": "d_college_projects_gdgcblr_nextjs_page_events",
+      "target": "page_eventspage",
+      "relation": "renders",
+      "confidence": "EXTRACTED",
+      "source_file": "D:/College/Projects/gdgcblr/app/events/page.tsx",
+      "source_location": "L119",
+      "layer": "base",
+      "provenance": [
+        {
+          "capability_id": "builtin:extract:typescript",
+          "stage": "extract",
+          "source_file": "D:/College/Projects/gdgcblr/app/events/page.tsx",
+          "source_location": "L119"
+        }
+      ]
+    },
+    {
+      "source": "d_college_projects_gdgcblr_nextjs_route_events",
+      "target": "d_college_projects_gdgcblr_nextjs_layout",
+      "relation": "depends_on",
+      "confidence": "EXTRACTED",
+      "source_file": "D:/College/Projects/gdgcblr/app/events/page.tsx",
+      "source_location": "L1",
+      "layer": "base",
+      "provenance": [
+        {
+          "capability_id": "builtin:extract:typescript",
+          "stage": "extract",
+          "source_file": "D:/College/Projects/gdgcblr/app/events/page.tsx",
+          "source_location": "L1"
+        }
+      ]
+    },
+    {
+      "source": "d_college_projects_gdgcblr_nextjs_page_events",
+      "target": "d_college_projects_gdgcblr_app_components_eventshero_tsx_eventshero",
+      "relation": "renders",
+      "confidence": "EXTRACTED",
+      "source_file": "D:/College/Projects/gdgcblr/app/events/page.tsx",
+      "source_location": "L39",
+      "layer": "base",
+      "provenance": [
+        {
+          "capability_id": "builtin:extract:typescript",
+          "stage": "extract",
+          "source_file": "D:/College/Projects/gdgcblr/app/events/page.tsx",
+          "source_location": "L39"
+        }
+      ]
+    },
+    {
+      "source": "layout",
+      "target": "next",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "D:/College/Projects/gdgcblr/app/layout.tsx",
+      "source_location": "L1",
+      "layer": "base",
+      "provenance": [
+        {
+          "capability_id": "builtin:extract:typescript",
+          "stage": "extract",
+          "source_file": "D:/College/Projects/gdgcblr/app/layout.tsx",
+          "source_location": "L1"
+        }
+      ]
+    },
+    {
+      "source": "layout",
+      "target": "layout_rootlayout",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:/College/Projects/gdgcblr/app/layout.tsx",
+      "source_location": "L10",
+      "layer": "base",
+      "provenance": [
+        {
+          "capability_id": "builtin:extract:typescript",
+          "stage": "extract",
+          "source_file": "D:/College/Projects/gdgcblr/app/layout.tsx",
+          "source_location": "L10"
+        }
+      ]
+    },
+    {
+      "source": "d_college_projects_gdgcblr_nextjs_route",
+      "target": "d_college_projects_gdgcblr_nextjs_layout",
+      "relation": "depends_on",
+      "confidence": "EXTRACTED",
+      "source_file": "D:/College/Projects/gdgcblr/app/page.tsx",
+      "source_location": "L1",
+      "layer": "base",
+      "provenance": [
+        {
+          "capability_id": "builtin:extract:typescript",
+          "stage": "extract",
+          "source_file": "D:/College/Projects/gdgcblr/app/page.tsx",
+          "source_location": "L1"
+        }
+      ]
+    },
+    {
+      "source": "d_college_projects_gdgcblr_nextjs_layout",
+      "target": "layout_rootlayout",
+      "relation": "renders",
+      "confidence": "EXTRACTED",
+      "source_file": "D:/College/Projects/gdgcblr/app/layout.tsx",
+      "source_location": "L10",
+      "layer": "base",
+      "provenance": [
+        {
+          "capability_id": "builtin:extract:typescript",
+          "stage": "extract",
+          "source_file": "D:/College/Projects/gdgcblr/app/layout.tsx",
+          "source_location": "L10"
+        }
+      ]
+    },
+    {
+      "source": "page",
+      "target": "page_arrowicon",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:/College/Projects/gdgcblr/app/page.tsx",
+      "source_location": "L192",
+      "layer": "base",
+      "provenance": [
+        {
+          "capability_id": "builtin:extract:typescript",
+          "stage": "extract",
+          "source_file": "D:/College/Projects/gdgcblr/app/page.tsx",
+          "source_location": "L192"
+        }
+      ]
+    },
+    {
+      "source": "page",
+      "target": "page_home",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "D:/College/Projects/gdgcblr/app/page.tsx",
+      "source_location": "L216",
+      "layer": "base",
+      "provenance": [
+        {
+          "capability_id": "builtin:extract:typescript",
+          "stage": "extract",
+          "source_file": "D:/College/Projects/gdgcblr/app/page.tsx",
+          "source_location": "L216"
+        }
+      ]
+    },
+    {
+      "source": "page_home",
+      "target": "eventshero_googledots",
+      "relation": "renders",
+      "confidence": "EXTRACTED",
+      "source_file": "D:/College/Projects/gdgcblr/app/page.tsx",
+      "source_location": "L216",
+      "layer": "base",
+      "provenance": [
+        {
+          "capability_id": "builtin:extract:typescript",
+          "stage": "extract",
+          "source_file": "D:/College/Projects/gdgcblr/app/page.tsx",
+          "source_location": "L216"
+        }
+      ]
+    },
+    {
+      "source": "page_home",
+      "target": "eventshero_arrowicon",
+      "relation": "renders",
+      "confidence": "EXTRACTED",
+      "source_file": "D:/College/Projects/gdgcblr/app/page.tsx",
+      "source_location": "L216",
+      "layer": "base",
+      "provenance": [
+        {
+          "capability_id": "builtin:extract:typescript",
+          "stage": "extract",
+          "source_file": "D:/College/Projects/gdgcblr/app/page.tsx",
+          "source_location": "L216"
+        }
+      ]
+    },
+    {
+      "source": "page_home",
+      "target": "page_sectionlabel",
+      "relation": "renders",
+      "confidence": "EXTRACTED",
+      "source_file": "D:/College/Projects/gdgcblr/app/page.tsx",
+      "source_location": "L216",
+      "layer": "base",
+      "provenance": [
+        {
+          "capability_id": "builtin:extract:typescript",
+          "stage": "extract",
+          "source_file": "D:/College/Projects/gdgcblr/app/page.tsx",
+          "source_location": "L216"
+        }
+      ]
+    },
+    {
+      "source": "d_college_projects_gdgcblr_nextjs_route",
+      "target": "d_college_projects_gdgcblr_nextjs_page",
+      "relation": "depends_on",
+      "confidence": "EXTRACTED",
+      "source_file": "D:/College/Projects/gdgcblr/app/page.tsx",
+      "source_location": "L1",
+      "layer": "base",
+      "provenance": [
+        {
+          "capability_id": "builtin:extract:typescript",
+          "stage": "extract",
+          "source_file": "D:/College/Projects/gdgcblr/app/page.tsx",
+          "source_location": "L1"
+        }
+      ]
+    },
+    {
+      "source": "d_college_projects_gdgcblr_nextjs_page",
+      "target": "page_home",
+      "relation": "renders",
+      "confidence": "EXTRACTED",
+      "source_file": "D:/College/Projects/gdgcblr/app/page.tsx",
+      "source_location": "L216",
+      "layer": "base",
+      "provenance": [
+        {
+          "capability_id": "builtin:extract:typescript",
+          "stage": "extract",
+          "source_file": "D:/College/Projects/gdgcblr/app/page.tsx",
+          "source_location": "L216"
+        }
+      ]
+    },
+    {
+      "source": "next_config",
+      "target": "next",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "D:/College/Projects/gdgcblr/next.config.ts",
+      "source_location": "L1",
+      "layer": "base",
+      "provenance": [
+        {
+          "capability_id": "builtin:extract:typescript",
+          "stage": "extract",
+          "source_file": "D:/College/Projects/gdgcblr/next.config.ts",
+          "source_location": "L1"
+        }
+      ]
+    },
+    {
+      "source": "page",
+      "target": "eventshero_eventshero",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "D:\\College\\Projects\\gdgcblr\\app\\events\\page.tsx",
+      "source_location": "L4",
+      "layer": "base",
+      "provenance": [
+        {
+          "capability_id": "builtin:extract:typescript",
+          "stage": "extract",
+          "source_file": "D:\\College\\Projects\\gdgcblr\\app\\events\\page.tsx",
+          "source_location": "L4"
+        }
+      ]
+    }
+  ],
+  "hyperedges": [],
+  "community_labels": {
+    "0": "App Events Hero",
+    "1": "App Page",
+    "2": "App Events Hero — Events",
+    "3": "App",
+    "4": "App — Page",
+    "5": "App Layout",
+    "6": "Public Next",
+    "7": "App Page — Events",
+    "8": "Cfcsfs Jpg",
+    "9": "Cloudforall Jpg",
+    "10": "Community Day Jpg",
+    "11": "File SVG",
+    "12": "Globe SVG",
+    "13": "Next Env D TypeScript",
+    "14": "Observability Jpg",
+    "15": "Vercel SVG",
+    "16": "Window SVG"
+  },
+  "semantic_anomalies": [
+    {
+      "id": "bridge_node:page_home",
+      "kind": "bridge_node",
+      "severity": "HIGH",
+      "score": 140.13,
+      "summary": "Home() bridges App Events Hero and App Page, App Page — Events, App — Page.",
+      "why": "High betweenness centrality (35.033) across 4 communities makes this node a likely dependency chokepoint."
+    },
+    {
+      "id": "bridge_node:page_eventspage",
+      "kind": "bridge_node",
+      "severity": "HIGH",
+      "score": 107.1,
+      "summary": "EventsPage() bridges App Page — Events and App Page, App Events Hero — Events.",
+      "why": "High betweenness centrality (35.700) across 3 communities makes this node a likely dependency chokepoint."
+    },
+    {
+      "id": "bridge_node:d_college_projects_gdgcblr_nextjs_page_events",
+      "kind": "bridge_node",
+      "severity": "HIGH",
+      "score": 96.6,
+      "summary": "page /events bridges App Events Hero — Events and App, App Page — Events.",
+      "why": "High betweenness centrality (32.200) across 3 communities makes this node a likely dependency chokepoint."
+    },
+    {
+      "id": "cross_boundary_edge:layout /->RootLayout():renders",
+      "kind": "cross_boundary_edge",
+      "severity": "HIGH",
+      "score": 5,
+      "summary": "layout / → RootLayout() crosses graph boundaries in an unexpected way.",
+      "why": "connects across different repos/directories; bridges separate communities"
+    },
+    {
+      "id": "cross_boundary_edge:page /->Home():renders",
+      "kind": "cross_boundary_edge",
+      "severity": "HIGH",
+      "score": 5,
+      "summary": "page / → Home() crosses graph boundaries in an unexpected way.",
+      "why": "connects across different repos/directories; bridges separate communities; peripheral node `page /` unexpectedly reaches hub `Home()`"
+    }
+  ]
+}
