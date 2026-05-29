@@ -63,10 +63,10 @@ const communityCalls = [
   {
     title: "Call for proposals",
     label: "Speakers, workshops, demos",
-    text: "Bring a session with practical takeaways for builders working across cloud, AI, platforms, and production systems.",
+    text: "Bring a session with practical takeaways for builders working across cloud and AI.",
     cta: "Submit a proposal",
     href: chapterHref,
-    image: "/gallery/observability.jpg",
+    image: "/gallery/ccdspeaker1.jpg",
   },
   {
     title: "Venue interest",
@@ -122,20 +122,9 @@ function ArrowIcon() {
   );
 }
 
-function SectionIntro({
-  label,
-  title,
-  text,
-}: {
-  label: string;
-  title: string;
-  text: string;
-}) {
+function SectionIntro({ title, text }: { title: string; text: string }) {
   return (
     <div className="max-w-2xl">
-      <p className="text-sm font-semibold tracking-tight text-blue-600">
-        {label}
-      </p>
       <h2 className="mt-4 text-balance text-[clamp(2.1rem,4.4vw,4.8rem)] font-semibold leading-[0.95] tracking-[-0.04em] text-black">
         {title}
       </h2>
@@ -151,6 +140,17 @@ function SectionIntro({
 export default function Home() {
   const shouldReduceMotion = useReducedMotion();
   const glowRef = useRef<HTMLDivElement>(null);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+  const scroll = (direction: "left" | "right") => {
+    if (scrollContainerRef.current) {
+      const scrollAmount = direction === "left" ? -400 : 400;
+      scrollContainerRef.current.scrollBy({
+        left: scrollAmount,
+        behavior: "smooth",
+      });
+    }
+  };
 
   // Typewriter state
   const totalChars = heroWords[0].length + heroWords[1].length;
@@ -385,17 +385,19 @@ export default function Home() {
 
             <motion.div
               className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row"
+              initial="hidden"
+              animate={typeIndex >= totalChars ? "show" : "hidden"}
               variants={shouldReduceMotion ? {} : fadeInBlur}
             >
               <motion.a
                 href={chapterHref}
-                className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-black px-8 text-sm font-semibold text-white shadow-lg shadow-black/10 transition-transform hover:scale-[1.02]"
+                className="inline-flex h-14 items-center justify-center gap-2 rounded-full bg-black px-10 text-base font-semibold text-white shadow-lg shadow-black/10 transition-transform hover:scale-[1.02]"
               >
                 Join the community
               </motion.a>
               <Link
                 href="/events"
-                className="inline-flex h-12 items-center justify-center rounded-full bg-gray-50 px-8 text-sm font-semibold text-black transition-colors hover:bg-gray-100"
+                className="inline-flex h-14 items-center justify-center rounded-full bg-gray-50 px-10 text-base font-semibold text-black transition-colors hover:bg-gray-100"
               >
                 Explore events
               </Link>
@@ -403,57 +405,67 @@ export default function Home() {
           </motion.div>
         </section>
 
-        {/* ── Zigzag Layout: Program & Calls ── */}
+        {/* ── Zigzag & Stats Layout: Program & Calls ── */}
         <section id="program" className="px-5 py-32 sm:px-8 lg:px-10 lg:py-48">
           <div className="mx-auto flex w-full max-w-7xl flex-col gap-32 lg:gap-48">
-            {/* Zigzag Block 1: The Platform */}
-            <div className="grid items-center gap-16 lg:grid-cols-2 lg:gap-24">
-              <div className="order-2 lg:order-1">
+            {/* Premium Stats Layout */}
+            <div className="flex flex-col gap-12">
+              <div className="max-w-2xl">
                 <SectionIntro
-                  label="Antigravity 2.0"
-                  title="Your command center for multiple agents."
-                  text="Run autonomous coding agents, execute shell commands directly, and manage background subagents all from your keyboard in real-time."
+                  title="A massive network of builders."
+                  text="We've grown into one of the largest and most active developer communities in the region, bringing together thousands of engineers, founders, and students."
                 />
-                <div className="mt-8 flex gap-6">
-                  <div>
-                    <dt className="text-3xl font-semibold tracking-tight text-black">
-                      40+
-                    </dt>
-                    <dd className="mt-1 text-sm text-gray-500">Events run</dd>
-                  </div>
-                  <div>
-                    <dt className="text-3xl font-semibold tracking-tight text-black">
-                      5K+
-                    </dt>
-                    <dd className="mt-1 text-sm text-gray-500">Devs reached</dd>
-                  </div>
-                </div>
               </div>
-              <div className="relative order-1 aspect-[4/3] w-full overflow-hidden rounded-[2rem] bg-gray-50 p-1 lg:order-2">
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-100 via-white to-green-100 opacity-50" />
-                <div className="relative h-full w-full rounded-[1.8rem] bg-white shadow-xl shadow-black/5 ring-1 ring-gray-900/5 p-8">
-                  <div className="flex h-full flex-col">
-                    <div className="flex items-center gap-2 border-b border-gray-100 pb-4">
-                      <div className="h-3 w-3 rounded-full bg-red-400" />
-                      <div className="h-3 w-3 rounded-full bg-yellow-400" />
-                      <div className="h-3 w-3 rounded-full bg-green-400" />
-                    </div>
-                    <div className="mt-6 flex-1 space-y-4">
-                      <div className="h-10 w-3/4 rounded-lg bg-gray-100" />
-                      <div className="h-32 w-full rounded-lg bg-gray-50 border border-gray-100" />
-                      <div className="h-10 w-1/2 rounded-lg bg-blue-50 text-blue-600 flex items-center px-4 text-sm font-medium">
-                        Executing tasks...
-                      </div>
-                    </div>
+              <div className="grid grid-cols-2 gap-4 md:grid-cols-4 sm:gap-6">
+                {[
+                  {
+                    value: "5K+",
+                    label: "Developers in Network",
+                    color: "bg-[#4285F4]",
+                  },
+                  {
+                    value: "40+",
+                    label: "Tech Events Hosted",
+                    color: "bg-[#EA4335]",
+                  },
+                  {
+                    value: "120+",
+                    label: "Expert Speakers",
+                    color: "bg-[#FBBC04]",
+                  },
+                  {
+                    value: "8+",
+                    label: "Years Active",
+                    color: "bg-[#34A853]",
+                  },
+                ].map((stat, idx) => (
+                  <div
+                    key={idx}
+                    className="group relative flex flex-col items-start justify-end overflow-hidden rounded-[2rem] bg-gray-50 p-6 sm:p-8 ring-1 ring-gray-200 transition-all duration-500 hover:bg-white hover:ring-gray-300 hover:shadow-xl"
+                  >
+                    <div
+                      className={`absolute top-0 right-0 h-32 w-32 -translate-y-16 translate-x-16 rounded-full blur-3xl transition-opacity duration-500 opacity-20 group-hover:opacity-50 ${stat.color}`}
+                    />
+
+                    <div
+                      className={`mb-8 h-1.5 w-10 rounded-full ${stat.color} transition-transform duration-500 group-hover:scale-125 group-hover:translate-x-1`}
+                    />
+
+                    <dt className="text-4xl font-bold tracking-tight text-black sm:text-5xl">
+                      {stat.value}
+                    </dt>
+                    <dd className="mt-3 text-[10px] sm:text-xs font-bold text-gray-500 tracking-widest uppercase">
+                      {stat.label}
+                    </dd>
                   </div>
-                </div>
+                ))}
               </div>
             </div>
 
             {/* Zigzag Block 2: Call for proposals */}
             <div className="grid items-center gap-16 lg:grid-cols-2 lg:gap-24">
               <div className="relative aspect-[4/3] w-full">
-                <div className="relative h-full w-full overflow-hidden rounded-[2rem] bg-white p-2 shadow-xl shadow-black/5 ring-1 ring-gray-900/5">
+                <div className="relative h-full w-full overflow-hidden rounded-[2rem] ring-1 ring-gray-900/5">
                   <div className="relative h-full w-full overflow-hidden rounded-[1.5rem]">
                     <Image
                       src={communityCalls[0].image}
@@ -464,11 +476,6 @@ export default function Home() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-gray-900/20 to-transparent" />
                     <div className="absolute bottom-8 left-8 right-8">
-                      <div className="inline-flex items-center gap-2 rounded-full bg-white/20 px-3 py-1 backdrop-blur-md ring-1 ring-white/30 mb-3">
-                        <span className="text-xs font-medium text-white tracking-wide uppercase">
-                          Open Now
-                        </span>
-                      </div>
                       <h3 className="text-3xl font-semibold text-white tracking-tight">
                         {communityCalls[0].title}
                       </h3>
@@ -481,13 +488,12 @@ export default function Home() {
               </div>
               <div>
                 <SectionIntro
-                  label="Community Calls"
-                  title="Bring the speaker, the room, or the next problem."
+                  title="Speak at our next event."
                   text={communityCalls[0].text}
                 />
                 <a
                   href={communityCalls[0].href}
-                  className="mt-8 inline-flex h-12 items-center justify-center gap-2 rounded-full bg-black px-8 text-sm font-semibold text-white transition-all hover:bg-gray-900 hover:shadow-lg hover:shadow-black/20"
+                  className="mt-8 inline-flex h-14 items-center justify-center gap-2 rounded-full bg-black px-10 text-base font-semibold text-white transition-all hover:bg-gray-900 hover:shadow-lg hover:shadow-black/20"
                 >
                   {communityCalls[0].cta}
                   <svg
@@ -511,13 +517,12 @@ export default function Home() {
             <div className="grid items-center gap-16 lg:grid-cols-2 lg:gap-24">
               <div className="order-2 lg:order-1">
                 <SectionIntro
-                  label="Venues"
                   title="Open your doors to the builders."
                   text={communityCalls[1].text}
                 />
                 <a
                   href={communityCalls[1].href}
-                  className="mt-8 inline-flex h-12 items-center justify-center gap-2 rounded-full bg-white px-8 text-sm font-semibold text-black ring-1 ring-gray-200 transition-all hover:bg-gray-50 hover:shadow-lg hover:shadow-gray-200"
+                  className="mt-8 inline-flex h-14 items-center justify-center gap-2 rounded-full bg-white px-10 text-base font-semibold text-black ring-1 ring-gray-200 transition-all hover:bg-gray-50 hover:shadow-lg hover:shadow-gray-200"
                 >
                   {communityCalls[1].cta}
                   <svg
@@ -536,7 +541,7 @@ export default function Home() {
                 </a>
               </div>
               <div className="relative order-1 aspect-[4/3] w-full lg:order-2">
-                <div className="relative h-full w-full overflow-hidden rounded-[2rem] bg-white p-2 shadow-xl shadow-black/5 ring-1 ring-gray-900/5">
+                <div className="relative h-full w-full overflow-hidden rounded-[2rem] ring-1 ring-gray-900/5">
                   <div className="relative h-full w-full overflow-hidden rounded-[1.5rem]">
                     <Image
                       src={communityCalls[1].image}
@@ -547,11 +552,6 @@ export default function Home() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-gray-900/20 to-transparent" />
                     <div className="absolute bottom-8 left-8 right-8">
-                      <div className="inline-flex items-center gap-2 rounded-full bg-white/20 px-3 py-1 backdrop-blur-md ring-1 ring-white/30 mb-3">
-                        <span className="text-xs font-medium text-white tracking-wide uppercase">
-                          Partner With Us
-                        </span>
-                      </div>
                       <h3 className="text-3xl font-semibold text-white tracking-tight">
                         {communityCalls[1].title}
                       </h3>
@@ -566,6 +566,153 @@ export default function Home() {
           </div>
         </section>
 
+        {/* ── Past Events (Premium Carousel Layout) ── */}
+
+        <section className="px-5 py-24 sm:px-8 lg:px-10 bg-white">
+          <div className="mx-auto w-full max-w-7xl">
+            {/* Header */}
+            <div className="flex items-center justify-between mb-12">
+              <h2 className="text-3xl font-medium tracking-tight text-black sm:text-4xl">
+                Past Events
+              </h2>
+              <a
+                href="/events"
+                className="inline-flex h-10 items-center justify-center rounded-full bg-gray-50 px-6 text-sm font-medium text-black ring-1 ring-gray-200 transition-colors hover:bg-gray-100"
+              >
+                View all
+              </a>
+            </div>
+
+            {/* Grid */}
+            <div
+              ref={scrollContainerRef}
+              className="flex gap-6 overflow-x-auto pb-8 snap-x snap-mandatory scrollbar-hide"
+              style={{ scrollbarWidth: "none" }}
+            >
+              {[
+                {
+                  title: "Google Cloud Community Day 2025",
+                  date: "March 15, 2025",
+                  tag: "Flagship",
+                  image: "/gallery/ccdspeaker1.jpg",
+                },
+                {
+                  title: "Build with AI: Masterclass",
+                  date: "February 10, 2025",
+                  tag: "Workshop",
+                  image: "/gallery/observability.jpg",
+                },
+                {
+                  title: "DevFest Bengaluru 2024",
+                  date: "December 5, 2024",
+                  tag: "Conference",
+                  image: "/gallery/ccdspeaker1.jpg",
+                },
+                {
+                  title: "Google I/O Extended 2024",
+                  date: "July 20, 2024",
+                  tag: "Meetup",
+                  image: "/gallery/observability.jpg",
+                },
+                {
+                  title: "Women Techmakers 2024",
+                  date: "April 10, 2024",
+                  tag: "Summit",
+                  image: "/gallery/ccdspeaker1.jpg",
+                },
+                {
+                  title: "Cloud Next Recap 2023",
+                  date: "October 12, 2023",
+                  tag: "Meetup",
+                  image: "/gallery/observability.jpg",
+                },
+              ].map((event, idx) => (
+                <div
+                  key={idx}
+                  className="group flex flex-col gap-4 cursor-pointer flex-shrink-0 w-[85vw] sm:w-[calc(50%-12px)] lg:w-[calc(25%-18px)] snap-start"
+                >
+                  {/* Image container */}
+                  <div className="relative aspect-square w-full overflow-hidden rounded-[2rem] bg-gray-50">
+                    <Image
+                      src={event.image}
+                      alt={event.title}
+                      fill
+                      className="object-cover transition-transform duration-700 group-hover:scale-105"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                    />
+                  </div>
+                  {/* Content */}
+                  <div className="flex flex-col gap-2 px-1">
+                    <h3 className="text-xl font-semibold text-black leading-[1.3] tracking-tight">
+                      {event.title}
+                    </h3>
+                    <div className="flex items-center gap-3 text-xs font-medium text-gray-500">
+                      <span>{event.date}</span>
+                      <span className="text-gray-300">|</span>
+                      <span>{event.tag}</span>
+                    </div>
+                    <div className="mt-1 flex items-center text-sm font-medium text-gray-900">
+                      View event
+                      <svg
+                        className="ml-1 h-3.5 w-3.5 transition-transform group-hover:translate-x-1"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2.5}
+                          d="M9 5l7 7-7 7"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Arrows */}
+            <div className="mt-12 flex items-center justify-end gap-3">
+              <button
+                onClick={() => scroll("left")}
+                className="flex h-11 w-11 items-center justify-center rounded-full bg-gray-50 ring-1 ring-gray-200 transition-colors hover:bg-gray-100"
+              >
+                <svg
+                  className="h-4 w-4 text-black"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M15 19l-7-7 7-7"
+                  />
+                </svg>
+              </button>
+              <button
+                onClick={() => scroll("right")}
+                className="flex h-11 w-11 items-center justify-center rounded-full bg-gray-50 ring-1 ring-gray-200 transition-colors hover:bg-gray-100"
+              >
+                <svg
+                  className="h-4 w-4 text-black"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </section>
         {/* ── Gallery Grid (Light Theme) ── */}
         <section
           id="gallery"
@@ -574,9 +721,8 @@ export default function Home() {
           <div className="mx-auto w-full max-w-7xl">
             <div className="mb-16 max-w-2xl">
               <SectionIntro
-                label="Community record"
-                title="Proof from rooms where builders showed up."
-                text="The strongest signal for the next event is the archive: conferences, summits, demo nights, and focused meetups across Bengaluru."
+                title="Where Bengaluru's developers come together."
+                text="Explore highlights from our past conferences, hands-on workshops, and meetups. See how we connect, learn, and grow as a community."
               />
             </div>
 
@@ -610,52 +756,61 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ── Bottom CTA ── */}
-        <section className="px-5 py-32 sm:px-8 lg:px-10">
-          <div className="mx-auto flex w-full max-w-7xl flex-col items-center text-center">
-            <h2 className="max-w-4xl text-balance text-[clamp(2.5rem,6vw,5rem)] font-medium leading-[0.95] tracking-[-0.04em] text-black">
-              Build with the community.
+        {/* ── Massive Minimal Footer ── */}
+        <section className="flex flex-col items-center justify-between bg-white px-5 sm:px-8 lg:px-10 pt-48 pb-12 min-h-[70vh]">
+          <div className="flex-1 flex flex-col items-center justify-center w-full max-w-[90rem]">
+            <p className="text-[11px] font-semibold text-gray-800 tracking-wide mb-2 sm:mb-6 uppercase">
+              Thats
+            </p>
+            <h2
+              className="text-[15vw] sm:text-[18vw] leading-none font-semibold text-[#111111] text-center select-none"
+              style={{ letterSpacing: "-0.05em" }}
+            >
+              GDG<span className="text-[#4285F4]">C</span>
+              <span className="inline-block -translate-y-[0.12em] text-[#34A853]">
+                BLR
+              </span>
             </h2>
-            <div className="mt-10">
-              <a
-                href={registerHref}
-                className="inline-flex h-14 items-center justify-center gap-2 rounded-full bg-blue-600 px-10 text-base font-semibold text-white shadow-xl shadow-blue-600/20 transition-transform hover:scale-[1.02]"
+            <p className="text-[11px] font-semibold text-gray-800 tracking-wide mb-2 sm:mb-6 uppercase">
+              For you
+            </p>
+          </div>
+
+          <div className="w-full max-w-[90rem] flex flex-col gap-6 md:flex-row md:items-end md:justify-between mt-32">
+            <div className="flex items-center">
+              <span className="text-xl font-medium text-gray-500 tracking-tight select-none">
+                GDG Cloud Bengaluru
+              </span>
+            </div>
+            <div className="flex flex-wrap gap-x-6 gap-y-2 text-[11px] font-medium text-gray-500 uppercase tracking-wide">
+              <Link
+                href="/code-of-conduct"
+                className="hover:text-black transition-colors"
               >
-                Register for DeployFest
-                <ArrowIcon />
-              </a>
+                Code of Conduct
+              </Link>
+              <Link
+                href="/privacy-policy"
+                className="hover:text-black transition-colors"
+              >
+                Privacy Policy
+              </Link>
+              <Link
+                href="/code-of-conduct"
+                className="hover:text-black transition-colors"
+              >
+                Community Guidelines
+              </Link>
+              <Link
+                href="/contact"
+                className="hover:text-black transition-colors"
+              >
+                Contact Us
+              </Link>
             </div>
           </div>
         </section>
       </main>
-
-      {/* ── Footer ── */}
-      <footer className="border-t border-gray-100 bg-white px-5 py-12 text-sm text-gray-500 sm:px-8 lg:px-10">
-        <div className="mx-auto flex w-full max-w-7xl flex-col gap-6 md:flex-row md:items-center md:justify-between">
-          <div className="flex items-center gap-4">
-            <Image
-              src={logo}
-              alt="GDG Cloud Bengaluru"
-              className="h-7 w-auto grayscale opacity-70 transition-all hover:grayscale-0 hover:opacity-100"
-            />
-            <span>© 2026 GDG Cloud Bengaluru.</span>
-          </div>
-          <div className="flex flex-wrap gap-x-8 gap-y-4 font-medium">
-            <a href="#program" className="hover:text-black transition-colors">
-              Program
-            </a>
-            <a href="#calls" className="hover:text-black transition-colors">
-              Calls
-            </a>
-            <a href="#gallery" className="hover:text-black transition-colors">
-              Gallery
-            </a>
-            <Link href="/events" className="hover:text-black transition-colors">
-              Events
-            </Link>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 }

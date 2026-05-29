@@ -22,9 +22,22 @@
 
 # misc
 .DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
 *.pem
 
+# editor tooling
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
 # debug
+*.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
@@ -35,6 +48,15 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+# local tooling output
+.cache/
+.turbo/
+.eslintcache
+.stylelintcache
+.swc/
+.recovery-logs/
+graphify-out/
 
 # typescript
 *.tsbuildinfo
