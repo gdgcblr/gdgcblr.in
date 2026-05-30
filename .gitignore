@@ -59,6 +59,7 @@ yarn-error.log*
 /graphify-out/
 /.github/
 /skills/
+/.impeccable/
 
 # typescript
 *.tsbuildinfo
