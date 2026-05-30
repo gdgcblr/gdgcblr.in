@@ -75,6 +75,11 @@ tmp/
 env/
 # Distribution and build outputs
 dist/
+
+# Markdown files
+*.md
+!README.md
+
 # Backup and swap files
 *.bak
 *.swp
