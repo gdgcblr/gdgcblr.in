@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import Link from "next/link";
-import Particles from "../Particles";
+import Medusae from "../ui/Medusae";
 
 const heroStagger = {
   hidden: {},
@@ -20,16 +20,17 @@ const fadeInBlur = {
   },
 };
 
-const heroText = "Where Bengaluru's Builders Connect, Create, and Scale.";
+const titleText = "Welcome to GDG Cloud Bengaluru.";
+const subtitleText = "Where Bengaluru's Builders Connect, Create, and Scale.";
 
 type WordData = { word: string; startIdx: number };
-const wordsWithIndices: WordData[] = [];
+const titleWords: WordData[] = [];
 let _idx = 0;
-heroText.split(" ").forEach((word) => {
-  wordsWithIndices.push({ word, startIdx: _idx });
+titleText.split(" ").forEach((word) => {
+  titleWords.push({ word, startIdx: _idx });
   _idx += word.length + 1; // +1 for the space
 });
-const totalChars = heroText.length;
+const totalChars = titleText.length;
 
 type HeroSectionProps = {
   chapterHref: string;
@@ -66,7 +67,8 @@ export default function HeroSection({ chapterHref }: HeroSectionProps) {
 
   const handleHeroMouse = (e: React.MouseEvent<HTMLElement>) => {
     if (shouldReduceMotion || !glowRef.current) return;
-    const { left, top, width, height } = e.currentTarget.getBoundingClientRect();
+    const { left, top, width, height } =
+      e.currentTarget.getBoundingClientRect();
     const x = ((e.clientX - left) / width) * 100;
     const y = ((e.clientY - top) / height) * 100;
     glowRef.current.style.background = `radial-gradient(600px circle at ${x}% ${y}%, rgba(66,133,244,0.04), transparent 40%)`;
@@ -120,9 +122,11 @@ export default function HeroSection({ chapterHref }: HeroSectionProps) {
         initial={{ opacity: 0 }}
         animate={{ opacity: typeIndex >= totalChars ? 1 : 0 }}
         transition={{ duration: 1, ease: "easeOut" }}
-        className="absolute inset-0 hidden sm:block"
+        className="absolute inset-0 hidden sm:block pointer-events-none"
       >
-        <Particles />
+        <div className="w-full h-full pointer-events-auto">
+          <Medusae config={{ background: { color: "transparent" } }} />
+        </div>
       </motion.div>
 
       <div
@@ -142,57 +146,75 @@ export default function HeroSection({ chapterHref }: HeroSectionProps) {
         initial={shouldReduceMotion ? false : "hidden"}
         animate="show"
       >
-        <h1 className="mt-8 w-full text-balance text-center text-[clamp(2.2rem,7.5vw,6rem)] font-medium leading-[1.1] tracking-[-0.03em] text-black sm:leading-[1.05]">
-          {wordsWithIndices.map(({ word, startIdx }, wIdx) => {
-            const isLastWord = wIdx === wordsWithIndices.length - 1;
+        <h1 className="mt-8 w-full text-balance text-center text-[clamp(2.5rem,8vw,6.5rem)] font-extrabold leading-[1.1] tracking-[-0.04em] text-black sm:leading-[1.05] drop-shadow-sm">
+          {titleWords.map(({ word, startIdx }, wIdx) => {
+            const isLastWord = wIdx === titleWords.length - 1;
+            const breakLine = word === "GDG";
+            
+            // Make "Welcome to" less bold
+            const fontWeight = wIdx < 2 ? "font-medium" : "font-extrabold";
 
             return (
-              <span key={wIdx} className="inline-block whitespace-nowrap">
-                {word.split("").map((char, cIdx) => {
-                  const globalIdx = startIdx + cIdx;
-                  const isVisible = globalIdx < typeIndex;
-                  const isCursor = globalIdx === typeIndex;
+              <span key={wIdx}>
+                {breakLine && <br />}
+                <span className={`inline-block whitespace-nowrap text-black ${fontWeight}`}>
+                  {word.split("").map((char, cIdx) => {
+                    const globalIdx = startIdx + cIdx;
+                    const isVisible = globalIdx < typeIndex;
+                    const isCursor = globalIdx === typeIndex;
 
-                  return (
-                    <span key={cIdx} className="relative inline-block">
-                      <span className={isVisible ? "opacity-100" : "opacity-0"}>
-                        {char}
+                    return (
+                      <span key={cIdx} className="relative inline-block">
+                        <span
+                          className={isVisible ? "opacity-100" : "opacity-0"}
+                        >
+                          {char}
+                        </span>
+                        {isCursor && showCursor && (
+                          <span className="absolute left-[-0.05em] top-[-0.05em] animate-pulse select-none font-light bg-gradient-to-b from-[#4285F4] via-[#EA4335] to-[#FBBC04] bg-clip-text text-transparent">
+                            |
+                          </span>
+                        )}
                       </span>
-                      {isCursor && showCursor && (
+                    );
+                  })}
+                  {!isLastWord && (
+                    <span className="relative inline-block">
+                      <span
+                        className={
+                          startIdx + word.length < typeIndex
+                            ? "opacity-100"
+                            : "opacity-0"
+                        }
+                      >
+                        {"\u00A0"}
+                      </span>
+                      {startIdx + word.length === typeIndex && showCursor && (
                         <span className="absolute left-[-0.05em] top-[-0.05em] animate-pulse select-none font-light bg-gradient-to-b from-[#4285F4] via-[#EA4335] to-[#FBBC04] bg-clip-text text-transparent">
                           |
                         </span>
                       )}
                     </span>
-                  );
-                })}
-                {!isLastWord && (
-                  <span className="relative inline-block">
-                    <span
-                      className={
-                        startIdx + word.length < typeIndex
-                          ? "opacity-100"
-                          : "opacity-0"
-                      }
-                    >
-                      {"\u00A0"}
+                  )}
+                  {isLastWord && typeIndex >= totalChars && showCursor && (
+                    <span className="absolute animate-pulse select-none font-light bg-gradient-to-b from-[#4285F4] via-[#EA4335] to-[#FBBC04] bg-clip-text text-transparent">
+                      |
                     </span>
-                    {startIdx + word.length === typeIndex && showCursor && (
-                      <span className="absolute left-[-0.05em] top-[-0.05em] animate-pulse select-none font-light bg-gradient-to-b from-[#4285F4] via-[#EA4335] to-[#FBBC04] bg-clip-text text-transparent">
-                        |
-                      </span>
-                    )}
-                  </span>
-                )}
-                {isLastWord && typeIndex >= totalChars && showCursor && (
-                  <span className="absolute animate-pulse select-none font-light bg-gradient-to-b from-[#4285F4] via-[#EA4335] to-[#FBBC04] bg-clip-text text-transparent">
-                    |
-                  </span>
-                )}
+                  )}
+                </span>
               </span>
             );
           })}
         </h1>
+
+        <motion.p
+          className="mx-auto mt-6 max-w-2xl text-lg text-gray-600 sm:text-xl lg:text-2xl h-8 sm:h-10 lg:h-12 flex justify-center"
+          initial="hidden"
+          animate={typeIndex >= totalChars ? "show" : "hidden"}
+          variants={shouldReduceMotion ? {} : fadeInBlur}
+        >
+          {subtitleText}
+        </motion.p>
 
         <motion.div
           className="mt-10 flex w-full flex-col items-center justify-center gap-4 sm:mt-12 sm:w-auto sm:flex-row"
