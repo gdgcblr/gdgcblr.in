@@ -10,10 +10,19 @@ export const metadata: Metadata = {
 };
 
 const galleryImages = [
-  { src: "/gallery/community-day.jpg", alt: "Community Day Bengaluru 2025 Flagship Event" },
+  {
+    src: "/gallery/community-day.jpg",
+    alt: "Community Day Bengaluru 2025 Flagship Event",
+  },
   { src: "/gallery/ccdspeaker1.jpg", alt: "Speaker at Cloud Community Day" },
-  { src: "/gallery/observability.jpg", alt: "Cloud Observability Summit Deep Dive" },
-  { src: "/gallery/cloudforall.jpg", alt: "Women Techmakers and Cloud For All Meetup" },
+  {
+    src: "/gallery/observability.jpg",
+    alt: "Cloud Observability Summit Deep Dive",
+  },
+  {
+    src: "/gallery/cloudforall.jpg",
+    alt: "Women Techmakers and Cloud For All Meetup",
+  },
   { src: "/gallery/cfcsfs.jpg", alt: "Come for Cloud, Stay for Success Demos" },
   { src: "/gallery/ccdspeaker.jpg", alt: "Keynote presentation at DevFest" },
 ];
@@ -30,7 +39,8 @@ export default function GalleryPage() {
               Our <span className="text-gray-300">Memories.</span>
             </h1>
             <p className="mt-8 max-w-2xl text-lg text-gray-600 sm:text-xl">
-              A visual journey through our hackathons, deep-dives, community days, and the amazing developers who make it all happen.
+              A visual journey through our hackathons, deep-dives, community
+              days, and the amazing developers who make it all happen.
             </p>
           </div>
 
