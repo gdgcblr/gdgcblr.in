@@ -5,10 +5,10 @@ import Link from "next/link";
 import logo from "@/public/logo.png";
 
 type NavbarProps = {
-  registerHref: string;
+  registerHref?: string;
 };
 
-export default function Navbar({ registerHref }: NavbarProps) {
+export default function Navbar({ registerHref = "https://gdg.community.dev/gdg-cloud-bengaluru/" }: NavbarProps) {
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-gray-100 bg-white/75 backdrop-blur-xl">
       <nav className="relative mx-auto flex h-14 w-full max-w-7xl items-center justify-between px-5 sm:h-16 sm:px-8 lg:px-10">
