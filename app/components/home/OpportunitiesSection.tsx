@@ -1,10 +1,26 @@
 "use client";
 
 import Image from "next/image";
+import { motion } from "framer-motion";
 import SectionHeading from "./SectionHeading";
 
 type OpportunitiesSectionProps = {
   chapterHref: string;
+};
+
+const fadeUpVariants = {
+  hidden: { opacity: 0, y: 40 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
+};
+
+const staggerContainer = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
 };
 
 export default function OpportunitiesSection({
@@ -35,15 +51,21 @@ export default function OpportunitiesSection({
       className="px-5 py-16 sm:px-8 sm:py-32 lg:px-10 lg:py-48"
     >
       <div className="mx-auto flex w-full max-w-7xl flex-col gap-16 sm:gap-32 lg:gap-48">
-        <div className="grid items-center gap-10 sm:gap-16 lg:grid-cols-2 lg:gap-24">
-          <div className="relative aspect-[4/3] w-full">
+        <motion.div
+          className="grid items-center gap-10 sm:gap-16 lg:grid-cols-2 lg:gap-24"
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: "-100px" }}
+        >
+          <motion.div variants={fadeUpVariants} className="relative aspect-[4/3] w-full">
             <div className="relative h-full w-full overflow-hidden rounded-2xl ring-1 ring-gray-900/5">
               <div className="relative h-full w-full overflow-hidden rounded-xl">
                 <Image
                   src={communityCalls[0].image}
                   alt={communityCalls[0].title}
                   fill
-                  className="object-cover"
+                  className="object-cover transition-transform duration-700 hover:scale-105"
                   sizes="(max-width: 1024px) 100vw, 50vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-gray-900/20 to-transparent" />
@@ -57,8 +79,8 @@ export default function OpportunitiesSection({
                 </div>
               </div>
             </div>
-          </div>
-          <div>
+          </motion.div>
+          <motion.div variants={fadeUpVariants}>
             <SectionHeading
               title="Speak at our next event."
               text={communityCalls[0].text}
@@ -85,11 +107,17 @@ export default function OpportunitiesSection({
                 </svg>
               </span>
             </a>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
-        <div className="grid items-center gap-10 sm:gap-16 lg:grid-cols-2 lg:gap-24">
-          <div className="order-2 lg:order-1">
+        <motion.div
+          className="grid items-center gap-10 sm:gap-16 lg:grid-cols-2 lg:gap-24"
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: "-100px" }}
+        >
+          <motion.div variants={fadeUpVariants} className="order-2 lg:order-1">
             <SectionHeading
               title="Open your doors to the builders."
               text={communityCalls[1].text}
@@ -116,15 +144,15 @@ export default function OpportunitiesSection({
                 </svg>
               </span>
             </a>
-          </div>
-          <div className="relative order-1 aspect-[4/3] w-full lg:order-2">
+          </motion.div>
+          <motion.div variants={fadeUpVariants} className="relative order-1 aspect-[4/3] w-full lg:order-2">
             <div className="relative h-full w-full overflow-hidden rounded-2xl ring-1 ring-gray-900/5">
               <div className="relative h-full w-full overflow-hidden rounded-xl">
                 <Image
                   src={communityCalls[1].image}
                   alt={communityCalls[1].title}
                   fill
-                  className="object-cover"
+                  className="object-cover transition-transform duration-700 hover:scale-105"
                   sizes="(max-width: 1024px) 100vw, 50vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-gray-900/20 to-transparent" />
@@ -138,8 +166,8 @@ export default function OpportunitiesSection({
                 </div>
               </div>
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );
