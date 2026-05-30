@@ -6,6 +6,7 @@ import * as THREE from "three";
 import { useReducedMotion } from "framer-motion";
 
 const GOOGLE_COLORS = ["#4285F4", "#EA4335", "#FBBC04", "#34A853"];
+const PRECALC_COLORS = GOOGLE_COLORS.map((c) => new THREE.Color(c));
 
 interface AntigravityProps {
   count?: number;
@@ -25,24 +26,25 @@ interface AntigravityProps {
 }
 
 const AntigravityInner: React.FC<AntigravityProps> = ({
-  count = 400,
+  count = 300,
   magnetRadius = 30,
-  ringRadius = 12,
+  ringRadius = 10,
   waveSpeed = 0.2,
   waveAmplitude = 0.5,
-  particleSize = 0.25,
+  particleSize = 0.35,
   lerpSpeed = 0.04,
   autoAnimate = true,
   particleVariance = 1.0,
   rotationSpeed = 0.1,
-  depthFactor = 2,
+  depthFactor = 3,
   pulseSpeed = 0.5,
-  particleShape = "sphere",
+  particleShape = "capsule",
   fieldStrength = 12,
 }) => {
   const meshRef = useRef<THREE.InstancedMesh>(null);
   const { viewport } = useThree();
   const dummy = useMemo(() => new THREE.Object3D(), []);
+  const tempColor = useMemo(() => new THREE.Color(), []);
   const shouldReduceMotion = useReducedMotion();
 
   const lastMousePos = useRef({ x: 0, y: 0 });
@@ -150,10 +152,12 @@ const AntigravityInner: React.FC<AntigravityProps> = ({
       const dy = my - projectedTargetY;
       const dist = Math.sqrt(dx * dx + dy * dy);
 
+      const macroWave = Math.sin(mx * 0.05 + t * 0.5) * 4;
+
       // Constant slow floating motion when idle
       let targetPos = {
         x: mx + Math.sin(t * 0.15 + randomRadiusOffset * 10) * 2.5,
-        y: my + Math.cos(t * 0.12 + randomRadiusOffset * 10) * 2.5,
+        y: my + Math.cos(t * 0.12 + randomRadiusOffset * 10) * 2.5 + macroWave,
         z: mz * depthFactor + Math.sin(t * 0.1 + randomRadiusOffset) * 2.5,
       };
 
@@ -203,9 +207,21 @@ const AntigravityInner: React.FC<AntigravityProps> = ({
       dummy.updateMatrix();
 
       mesh.setMatrixAt(i, dummy.matrix);
+
+      // Dynamic color wave
+      const waveVal =
+        (Math.sin(t * 0.5 + particle.cx * 0.05 + particle.cy * 0.05) + 1) / 2;
+      const colorProgress = waveVal * (PRECALC_COLORS.length - 1);
+      const idx1 = Math.floor(colorProgress);
+      const idx2 = Math.min(idx1 + 1, PRECALC_COLORS.length - 1);
+      const lerpAmt = colorProgress - idx1;
+
+      tempColor.lerpColors(PRECALC_COLORS[idx1], PRECALC_COLORS[idx2], lerpAmt);
+      mesh.setColorAt(i, tempColor);
     });
 
     mesh.instanceMatrix.needsUpdate = true;
+    if (mesh.instanceColor) mesh.instanceColor.needsUpdate = true;
   });
 
   return (
@@ -217,7 +233,12 @@ const AntigravityInner: React.FC<AntigravityProps> = ({
       {particleShape === "box" && <boxGeometry args={[0.3, 0.3, 0.3]} />}
       {particleShape === "tetrahedron" && <tetrahedronGeometry args={[0.3]} />}
       {/* We use instanceColor now, so material color is white and acts as a multiplier */}
-      <meshBasicMaterial color="white" transparent={true} opacity={0.7} />
+      <meshBasicMaterial
+        color="white"
+        transparent={true}
+        opacity={1}
+        toneMapped={false}
+      />
     </instancedMesh>
   );
 };
