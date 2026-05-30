@@ -60,6 +60,7 @@ yarn-error.log*
 /.github/
 /skills/
 /.impeccable/
+/scraped_data/
 
 # typescript
 *.tsbuildinfo

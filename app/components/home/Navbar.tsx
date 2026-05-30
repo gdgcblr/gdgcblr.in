@@ -43,12 +43,12 @@ export default function Navbar({ registerHref }: NavbarProps) {
           >
             CFP
           </a>
-          <a
+          <Link
             className="text-sm font-medium text-gray-500 transition-colors hover:text-black"
-            href="/#gallery"
+            href="/gallery"
           >
             Gallery
-          </a>
+          </Link>
           <Link
             className="text-sm font-medium text-gray-500 transition-colors hover:text-black"
             href="/events"
