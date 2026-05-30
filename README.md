@@ -1,36 +1,44 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# GDG Cloud Bengaluru Website
 
-## Getting Started
+Welcome to the official website for GDG Cloud Bengaluru! This project is built using Next.js 16 (App Router), Tailwind CSS, and Framer Motion for sleek, modern, and impeccable design.
 
-First, run the development server:
+## 🚀 Getting Started
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+To run the project locally on your machine:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+1. Install the dependencies:
+   ```bash
+   npm install
+   ```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+2. Run the development server:
+   ```bash
+   npm run dev
+   ```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+3. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## Learn More
+## ✏️ Editing Content
 
-To learn more about Next.js, take a look at the following resources:
+The site is built with modular components to make content updates incredibly easy without touching the core layout engine.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Homepage Content
+- **Hero & General Layout:** All sections on the homepage are located in `app/page.tsx` and the `app/components/home/` directory.
+- **Gallery/Bento Grid:** To add or remove images from the animated gallery grid, edit the `galleryHighlights` array at the top of `app/components/home/GallerySection.tsx`.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Events Page
+The Events page dynamically reconfigures itself based on the data you provide.
 
-## Deploy on Vercel
+To update the Events page, open `app/events/page.tsx`:
+1. **Featured Event:** Edit the `featuredEvent` object at the top of the file. 
+   - *Pro tip:* Toggle `isUpcoming: true` when you have a new event to enable the pulsing "Upcoming" badge and "Register" button. Toggle it to `false` when the event is over to seamlessly switch to a "Latest Event" view.
+2. **Past Events (Archive):** Add or remove items from the `archive` array. The grid will automatically style the rows and apply the brand colors you specify on hover.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Navigation
+- To update links in the top navigation bar or the footer, edit `app/components/home/Navbar.tsx` and `app/components/home/FooterNav.tsx`.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🛠️ Tech Stack
+- **Framework:** Next.js (App Router)
+- **Styling:** Tailwind CSS
+- **Animations:** Framer Motion & GSAP (for MagicBento interactions)
+- **Deployment:** Vercel (Recommended)
