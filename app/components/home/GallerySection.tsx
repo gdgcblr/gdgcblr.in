@@ -8,42 +8,42 @@ const galleryHighlights = [
     title: "Community Day Bengaluru 2025",
     label: "Flagship",
     image: "/gallery/community-day.jpg",
-    className: "md:col-span-2 lg:col-span-2 md:row-span-2 lg:row-span-2",
+    className: "col-span-2 row-span-2 md:col-span-2 lg:col-span-2 md:row-span-2 lg:row-span-2",
     glowColor: "66, 133, 244", // Google Blue
   },
   {
     title: "Cloud Observability Summit",
     label: "Deep Dive",
     image: "/gallery/observability.jpg",
-    className: "md:col-span-1 lg:col-span-1",
+    className: "col-span-1 md:col-span-1 lg:col-span-1",
     glowColor: "234, 67, 53", // Google Red
   },
   {
     title: "Women Techmakers",
     label: "Meetup",
     image: "/gallery/cloudforall.jpg",
-    className: "md:col-span-1 lg:col-span-1",
+    className: "col-span-1 md:col-span-1 lg:col-span-1",
     glowColor: "251, 188, 4", // Google Yellow
   },
   {
     title: "Build with AI",
     label: "Workshop",
     image: "/gallery/ccdspeaker1.jpg",
-    className: "md:col-span-2 lg:col-span-2 md:row-span-2 lg:row-span-2",
+    className: "col-span-2 row-span-2 md:col-span-2 lg:col-span-2 md:row-span-2 lg:row-span-2",
     glowColor: "52, 168, 83", // Google Green
   },
   {
     title: "DevFest 2024",
     label: "Conference",
     image: "/gallery/community-day.jpg",
-    className: "md:col-span-1 lg:col-span-1",
+    className: "col-span-1 md:col-span-1 lg:col-span-1",
     glowColor: "251, 188, 4", // Google Yellow
   },
   {
     title: "Come for Cloud",
     label: "Demos",
     image: "/gallery/cfcsfs.jpg",
-    className: "md:col-span-1 lg:col-span-1",
+    className: "col-span-1 md:col-span-1 lg:col-span-1",
     glowColor: "66, 133, 244", // Google Blue
   },
 ];

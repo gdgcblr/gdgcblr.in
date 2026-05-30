@@ -118,7 +118,7 @@ export default function PastEventsSection() {
           ))}
         </div>
       </div>
-      <div className="mx-auto align-center">
+      <div className="mt-8 flex justify-center w-full">
         <a
           href="/events"
           className="inline-flex h-10 items-center justify-center rounded-full bg-gray-50 px-6 text-sm font-semibold text-black ring-1 ring-gray-200 transition-colors hover:bg-gray-100"

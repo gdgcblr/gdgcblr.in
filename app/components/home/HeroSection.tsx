@@ -74,7 +74,7 @@ export default function HeroSection({ chapterHref }: HeroSectionProps) {
 
   return (
     <section
-      className="relative flex min-h-[80vh] flex-col items-center justify-center overflow-hidden pt-24 sm:min-h-[95vh] sm:pt-20"
+      className="relative flex min-h-[100dvh] flex-col items-center justify-center overflow-hidden pt-24 sm:min-h-[100vh] sm:pt-20"
       onMouseMove={handleHeroMouse}
     >
       <div
