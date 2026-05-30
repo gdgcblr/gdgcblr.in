@@ -3,7 +3,8 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import Link from "next/link";
-import Medusae from "../ui/Medusae";
+import { Medusae } from "antigravity-particle";
+import "antigravity-particle/medusae.css";
 
 const heroStagger = {
   hidden: {},
@@ -150,14 +151,16 @@ export default function HeroSection({ chapterHref }: HeroSectionProps) {
           {titleWords.map(({ word, startIdx }, wIdx) => {
             const isLastWord = wIdx === titleWords.length - 1;
             const breakLine = word === "GDG";
-            
+
             // Make "Welcome to" less bold
-            const fontWeight = wIdx < 2 ? "font-medium" : "font-extrabold";
+            const fontWeight = wIdx < 2 ? "font-medium" : "font-bold";
 
             return (
               <span key={wIdx}>
                 {breakLine && <br />}
-                <span className={`inline-block whitespace-nowrap text-black ${fontWeight}`}>
+                <span
+                  className={`inline-block whitespace-nowrap text-black ${fontWeight}`}
+                >
                   {word.split("").map((char, cIdx) => {
                     const globalIdx = startIdx + cIdx;
                     const isVisible = globalIdx < typeIndex;
