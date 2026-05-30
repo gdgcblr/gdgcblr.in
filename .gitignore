@@ -57,7 +57,29 @@ yarn-error.log*
 .swc/
 .recovery-logs/
 graphify-out/
+skills/
 
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Irrelevant stuffs
+# Local temp and build files
+tmp/
+*.tmp
+*.temp
+# Python virtualenvs
+.venv/
+env/
+# Distribution and build outputs
+dist/
+# Backup and swap files
+*.bak
+*.swp
+*.swo
+# Local environment override
+.env.local
+# Editor sessions
+*.sublime-workspace
+*.sublime-project
+
