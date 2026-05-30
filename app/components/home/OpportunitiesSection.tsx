@@ -1,19 +1,19 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import SectionHeading from "./SectionHeading";
 
 type OpportunitiesSectionProps = {
   chapterHref: string;
 };
 
-const fadeUpVariants = {
+const fadeUpVariants: Variants = {
   hidden: { opacity: 0, y: 40 },
   show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
 };
 
-const staggerContainer = {
+const staggerContainer: Variants = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
@@ -58,7 +58,10 @@ export default function OpportunitiesSection({
           whileInView="show"
           viewport={{ once: true, margin: "-100px" }}
         >
-          <motion.div variants={fadeUpVariants} className="relative aspect-[4/3] w-full">
+          <motion.div
+            variants={fadeUpVariants}
+            className="relative aspect-[4/3] w-full"
+          >
             <div className="relative h-full w-full overflow-hidden rounded-2xl ring-1 ring-gray-900/5">
               <div className="relative h-full w-full overflow-hidden rounded-xl">
                 <Image
@@ -145,7 +148,10 @@ export default function OpportunitiesSection({
               </span>
             </a>
           </motion.div>
-          <motion.div variants={fadeUpVariants} className="relative order-1 aspect-[4/3] w-full lg:order-2">
+          <motion.div
+            variants={fadeUpVariants}
+            className="relative order-1 aspect-[4/3] w-full lg:order-2"
+          >
             <div className="relative h-full w-full overflow-hidden rounded-2xl ring-1 ring-gray-900/5">
               <div className="relative h-full w-full overflow-hidden rounded-xl">
                 <Image
