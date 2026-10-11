@@ -553,8 +553,17 @@ export default function CFPForm() {
                 Mobile Number (10 Digits){" "}
                 <span className="text-red-500">*</span>
               </label>
-              <span className="text-[10px] text-gray-500 font-mono">
+              <span
+                className={`text-[10px] font-mono ${
+                  formData.phone.replace(/\D/g, "").length === 10
+                    ? "text-green-600 font-semibold"
+                    : "text-gray-500"
+                }`}
+              >
                 {formData.phone.replace(/\D/g, "").length} / 10 digits
+                {formData.phone.replace(/\D/g, "").length !== 10 &&
+                  formData.phone.replace(/\D/g, "").length > 0 &&
+                  ` (needs 10)`}
               </span>
             </div>
             <input
@@ -634,8 +643,17 @@ export default function CFPForm() {
               <label className="block text-xs font-bold uppercase tracking-wider text-black">
                 Speaker Bio <span className="text-red-500">*</span>
               </label>
-              <span className="text-[10px] text-gray-500">
-                {formData.bio.length} characters
+              <span
+                className={`text-[10px] font-mono ${
+                  formData.bio.trim().length >= 15
+                    ? "text-green-600 font-semibold"
+                    : "text-gray-500"
+                }`}
+              >
+                {formData.bio.trim().length} / 15 min chars
+                {formData.bio.trim().length < 15 &&
+                  formData.bio.trim().length > 0 &&
+                  ` (${15 - formData.bio.trim().length} more needed)`}
               </span>
             </div>
             <textarea
@@ -847,10 +865,21 @@ export default function CFPForm() {
               </div>
 
               <div>
-                <label className="block text-xs font-bold uppercase tracking-wider text-black">
-                  Panel Topic / Discussion Theme{" "}
-                  <span className="text-red-500">*</span>
-                </label>
+                <div className="flex items-center justify-between">
+                  <label className="block text-xs font-bold uppercase tracking-wider text-black">
+                    Panel Topic / Discussion Theme{" "}
+                    <span className="text-red-500">*</span>
+                  </label>
+                  <span
+                    className={`text-[10px] font-mono ${
+                      formData.panelTopic.trim().length >= 5
+                        ? "text-green-600 font-semibold"
+                        : "text-gray-500"
+                    }`}
+                  >
+                    {formData.panelTopic.trim().length} / 5 min chars
+                  </span>
+                </div>
                 <input
                   type="text"
                   name="panelTopic"
@@ -863,10 +892,24 @@ export default function CFPForm() {
               </div>
 
               <div>
-                <label className="block text-xs font-bold uppercase tracking-wider text-black">
-                  Your Perspective & Industry Experience{" "}
-                  <span className="text-red-500">*</span>
-                </label>
+                <div className="flex items-center justify-between">
+                  <label className="block text-xs font-bold uppercase tracking-wider text-black">
+                    Your Perspective & Industry Experience{" "}
+                    <span className="text-red-500">*</span>
+                  </label>
+                  <span
+                    className={`text-[10px] font-mono ${
+                      formData.panelPerspective.trim().length >= 15
+                        ? "text-green-600 font-semibold"
+                        : "text-gray-500"
+                    }`}
+                  >
+                    {formData.panelPerspective.trim().length} / 15 min chars
+                    {formData.panelPerspective.trim().length < 15 &&
+                      formData.panelPerspective.trim().length > 0 &&
+                      ` (${15 - formData.panelPerspective.trim().length} more)`}
+                  </span>
+                </div>
                 <textarea
                   name="panelPerspective"
                   rows={4}
@@ -882,10 +925,21 @@ export default function CFPForm() {
             /* ── CASE B: TALK OR WORKSHOP FORMAT (Solo Session details required) ── */
             <div className="space-y-5 border-t border-black/15 pt-5">
               <div>
-                <label className="block text-xs font-bold uppercase tracking-wider text-black">
-                  {formData.format} Title{" "}
-                  <span className="text-red-500">*</span>
-                </label>
+                <div className="flex items-center justify-between">
+                  <label className="block text-xs font-bold uppercase tracking-wider text-black">
+                    {formData.format} Title{" "}
+                    <span className="text-red-500">*</span>
+                  </label>
+                  <span
+                    className={`text-[10px] font-mono ${
+                      formData.title.trim().length >= 5
+                        ? "text-green-600 font-semibold"
+                        : "text-gray-500"
+                    }`}
+                  >
+                    {formData.title.trim().length} / 5 min chars
+                  </span>
+                </div>
                 <input
                   type="text"
                   name="title"
@@ -902,10 +956,24 @@ export default function CFPForm() {
               </div>
 
               <div>
-                <label className="block text-xs font-bold uppercase tracking-wider text-black">
-                  {formData.format} Abstract / Description{" "}
-                  <span className="text-red-500">*</span>
-                </label>
+                <div className="flex items-center justify-between">
+                  <label className="block text-xs font-bold uppercase tracking-wider text-black">
+                    {formData.format} Abstract / Description{" "}
+                    <span className="text-red-500">*</span>
+                  </label>
+                  <span
+                    className={`text-[10px] font-mono ${
+                      formData.abstract.trim().length >= 25
+                        ? "text-green-600 font-semibold"
+                        : "text-gray-500"
+                    }`}
+                  >
+                    {formData.abstract.trim().length} / 25 min chars
+                    {formData.abstract.trim().length < 25 &&
+                      formData.abstract.trim().length > 0 &&
+                      ` (${25 - formData.abstract.trim().length} more needed)`}
+                  </span>
+                </div>
                 <textarea
                   name="abstract"
                   rows={4}
@@ -918,9 +986,23 @@ export default function CFPForm() {
               </div>
 
               <div>
-                <label className="block text-xs font-bold uppercase tracking-wider text-black">
-                  Key Attendee Takeaways <span className="text-red-500">*</span>
-                </label>
+                <div className="flex items-center justify-between">
+                  <label className="block text-xs font-bold uppercase tracking-wider text-black">
+                    Key Attendee Takeaways <span className="text-red-500">*</span>
+                  </label>
+                  <span
+                    className={`text-[10px] font-mono ${
+                      formData.takeaways.trim().length >= 10
+                        ? "text-green-600 font-semibold"
+                        : "text-gray-500"
+                    }`}
+                  >
+                    {formData.takeaways.trim().length} / 10 min chars
+                    {formData.takeaways.trim().length < 10 &&
+                      formData.takeaways.trim().length > 0 &&
+                      ` (${10 - formData.takeaways.trim().length} more)`}
+                  </span>
+                </div>
                 <textarea
                   name="takeaways"
                   rows={3}

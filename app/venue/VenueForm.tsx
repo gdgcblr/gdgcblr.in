@@ -108,19 +108,29 @@ export default function VenueForm() {
     });
   };
 
+  const showError = (msg: string) => {
+    setErrorMessage(msg);
+    setTimeout(() => {
+      const errorEl = document.getElementById("venue-submit-error");
+      if (errorEl) {
+        errorEl.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+    }, 50);
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setErrorMessage("");
 
     // Validations
     if (!formData.contactName.trim()) {
-      setErrorMessage("Please enter the contact person's full name.");
+      showError("Please enter the contact person's full name.");
       return;
     }
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!formData.email.trim() || !emailRegex.test(formData.email.trim())) {
-      setErrorMessage("Please provide a valid work email address.");
+      showError("Please provide a valid work email address.");
       return;
     }
 
@@ -129,37 +139,37 @@ export default function VenueForm() {
     const isValid10DigitPhone =
       phoneDigits.length === 10 || (phoneDigits.length === 12 && phoneDigits.startsWith("91"));
     if (!isValid10DigitPhone) {
-      setErrorMessage("Mobile number is mandatory and must contain exactly 10 digits.");
+      showError("Mobile number is mandatory and must contain exactly 10 digits.");
       return;
     }
 
     if (!formData.company.trim()) {
-      setErrorMessage("Please provide your company or campus name.");
+      showError("Please provide your company or campus name.");
       return;
     }
 
     if (!formData.locationArea.trim()) {
-      setErrorMessage("Please specify the city area or neighborhood (e.g., Bellandur, Whitefield).");
+      showError("Please specify the city area or neighborhood (e.g., Bellandur, Whitefield).");
       return;
     }
 
     if (!formData.capacity.trim()) {
-      setErrorMessage("Please select the auditorium or hall capacity.");
+      showError("Please select the auditorium or hall capacity.");
       return;
     }
 
     if (!formData.venueType.trim()) {
-      setErrorMessage("Please select the venue type.");
+      showError("Please select the venue type.");
       return;
     }
 
     if (!formData.linkedinUrl.trim()) {
-      setErrorMessage("LinkedIn profile URL is mandatory.");
+      showError("LinkedIn profile URL is mandatory.");
       return;
     }
 
     if (!formData.acceptedCodeOfConduct) {
-      setErrorMessage("Please agree to the Community Guidelines and Code of Conduct.");
+      showError("Please agree to the Community Guidelines checkbox to proceed.");
       return;
     }
 
@@ -180,7 +190,7 @@ export default function VenueForm() {
       setSubmittedId(data.id);
       window.scrollTo({ top: 120, behavior: "smooth" });
     } catch (err: any) {
-      setErrorMessage(err.message || "An unexpected error occurred. Please try again.");
+      showError(err.message || "An unexpected error occurred. Please try again.");
     } finally {
       setSubmitting(false);
     }
@@ -258,6 +268,7 @@ export default function VenueForm() {
   return (
     <form
       onSubmit={handleSubmit}
+      noValidate
       className="mx-auto w-full max-w-3xl bg-white border border-black rounded-2xl p-6 sm:p-12 shadow-none"
     >
       {/* Error alert */}
@@ -314,8 +325,17 @@ export default function VenueForm() {
               <label className="block text-xs font-bold uppercase tracking-wider text-black">
                 Mobile Number (10 Digits) <span className="text-red-500">*</span>
               </label>
-              <span className="text-[10px] text-gray-500 font-mono">
+              <span
+                className={`text-[10px] font-mono ${
+                  formData.phone.replace(/\D/g, "").length === 10
+                    ? "text-green-600 font-semibold"
+                    : "text-gray-500"
+                }`}
+              >
                 {formData.phone.replace(/\D/g, "").length} / 10 digits
+                {formData.phone.replace(/\D/g, "").length !== 10 &&
+                  formData.phone.replace(/\D/g, "").length > 0 &&
+                  ` (needs 10)`}
               </span>
             </div>
             <input
@@ -569,6 +589,32 @@ export default function VenueForm() {
             . I represent that our organization is open to welcoming the developer community and coordinating with the GDG team for event hosting.
           </span>
         </label>
+
+        {/* Error banner directly above submit button */}
+        {errorMessage && (
+          <div
+            id="venue-submit-error"
+            className="mt-6 border border-black bg-white p-4 rounded-xl text-xs font-semibold text-black"
+          >
+            <div className="flex items-center gap-2 font-bold uppercase tracking-wider mb-1 text-black">
+              <svg
+                className="h-4 w-4 shrink-0 text-black"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
+                />
+              </svg>
+              Action Required:
+            </div>
+            <p className="text-gray-800 font-normal">{errorMessage}</p>
+          </div>
+        )}
 
         <div className="mt-8">
           <button

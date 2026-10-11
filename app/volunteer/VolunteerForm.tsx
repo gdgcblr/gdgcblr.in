@@ -112,19 +112,29 @@ export default function VolunteerForm() {
     }
   };
 
+  const showError = (msg: string) => {
+    setErrorMessage(msg);
+    setTimeout(() => {
+      const errorEl = document.getElementById("volunteer-submit-error");
+      if (errorEl) {
+        errorEl.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+    }, 50);
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setErrorMessage("");
 
     // Validations
     if (!formData.fullName.trim()) {
-      setErrorMessage("Please enter your full name.");
+      showError("Please enter your full name.");
       return;
     }
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!formData.email.trim() || !emailRegex.test(formData.email.trim())) {
-      setErrorMessage("Please enter a valid email address.");
+      showError("Please enter a valid email address.");
       return;
     }
 
@@ -133,47 +143,47 @@ export default function VolunteerForm() {
     const isValid10DigitPhone =
       phoneDigits.length === 10 || (phoneDigits.length === 12 && phoneDigits.startsWith("91"));
     if (!isValid10DigitPhone) {
-      setErrorMessage("Mobile number is mandatory and must contain exactly 10 digits.");
+      showError("Mobile number is mandatory and must contain exactly 10 digits.");
       return;
     }
 
     if (!formData.status.trim()) {
-      setErrorMessage("Please select your current status.");
+      showError("Please select your current status.");
       return;
     }
 
     if (!formData.organization.trim()) {
-      setErrorMessage("Please provide your college, company, or organization.");
+      showError("Please provide your college, company, or organization.");
       return;
     }
 
     if (!formData.city.trim()) {
-      setErrorMessage("Please enter your city.");
+      showError("Please enter your city.");
       return;
     }
 
     if (!formData.primaryRole.trim()) {
-      setErrorMessage("Please select your primary volunteer area of interest.");
+      showError("Please select your primary volunteer area of interest.");
       return;
     }
 
     if (!formData.headshotUrl.trim() && !photoPreview) {
-      setErrorMessage("Profile photo is mandatory. Please upload an image.");
+      showError("Profile photo is mandatory. Please upload an image.");
       return;
     }
 
     if (!formData.linkedinUrl.trim()) {
-      setErrorMessage("LinkedIn profile URL is mandatory.");
+      showError("LinkedIn profile URL is mandatory.");
       return;
     }
 
     if (!formData.motivation.trim() || formData.motivation.trim().length < 15) {
-      setErrorMessage("Please share why you want to volunteer (minimum 15 characters).");
+      showError("Please share why you want to volunteer (minimum 15 characters).");
       return;
     }
 
     if (!formData.acceptedCodeOfConduct) {
-      setErrorMessage("Please accept the Code of Conduct to submit your volunteer application.");
+      showError("Please accept the Code of Conduct checkbox to submit your volunteer application.");
       return;
     }
 
@@ -194,7 +204,7 @@ export default function VolunteerForm() {
       setSubmittedId(data.id);
       window.scrollTo({ top: 120, behavior: "smooth" });
     } catch (err: any) {
-      setErrorMessage(err.message || "An unexpected error occurred. Please try again.");
+      showError(err.message || "An unexpected error occurred. Please try again.");
     } finally {
       setSubmitting(false);
     }
@@ -273,6 +283,7 @@ export default function VolunteerForm() {
   return (
     <form
       onSubmit={handleSubmit}
+      noValidate
       className="mx-auto w-full max-w-3xl bg-white border border-black rounded-2xl p-6 sm:p-12 shadow-none"
     >
       {/* Error alert */}
@@ -639,7 +650,18 @@ export default function VolunteerForm() {
               <label className="block text-xs font-bold uppercase tracking-wider text-black">
                 Why do you want to volunteer with GDG Cloud Bengaluru? <span className="text-red-500">*</span>
               </label>
-              <span className="text-[10px] text-gray-500">{formData.motivation.length} characters</span>
+              <span
+                className={`text-[10px] font-mono ${
+                  formData.motivation.trim().length >= 15
+                    ? "text-green-600 font-semibold"
+                    : "text-gray-500"
+                }`}
+              >
+                {formData.motivation.trim().length} / 15 min chars
+                {formData.motivation.trim().length < 15 &&
+                  formData.motivation.trim().length > 0 &&
+                  ` (${15 - formData.motivation.trim().length} more needed)`}
+              </span>
             </div>
             <textarea
               name="motivation"
@@ -687,6 +709,32 @@ export default function VolunteerForm() {
             . I commit to being reliable, collaborative, and representing the community with enthusiasm and integrity.
           </span>
         </label>
+
+        {/* Error banner directly above submit button */}
+        {errorMessage && (
+          <div
+            id="volunteer-submit-error"
+            className="mt-6 border border-black bg-white p-4 rounded-xl text-xs font-semibold text-black"
+          >
+            <div className="flex items-center gap-2 font-bold uppercase tracking-wider mb-1 text-black">
+              <svg
+                className="h-4 w-4 shrink-0 text-black"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
+                />
+              </svg>
+              Action Required:
+            </div>
+            <p className="text-gray-800 font-normal">{errorMessage}</p>
+          </div>
+        )}
 
         <div className="mt-8">
           <button
