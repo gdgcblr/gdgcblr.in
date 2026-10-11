@@ -32,7 +32,7 @@ export default function OpportunitiesSection({
       label: "Speakers, workshops, demos",
       text: "Bring a session with practical takeaways for builders working across cloud and AI.",
       cta: "Submit a proposal",
-      href: chapterHref,
+      href: "/cfp",
       image: "/gallery/ccdspeaker1.jpg",
     },
     {
@@ -40,7 +40,7 @@ export default function OpportunitiesSection({
       label: "Host partner, campus, workspace",
       text: "Offer a space for meetups, labs, or build days. The community team coordinates agenda, format, and follow-up.",
       cta: "Offer a venue",
-      href: chapterHref,
+      href: "/venue",
       image: "/gallery/cloudforall.jpg",
     },
   ];

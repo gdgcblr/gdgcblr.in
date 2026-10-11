@@ -11,6 +11,15 @@ export default function FooterNav() {
         </span>
       </div>
       <div className="flex flex-wrap justify-center gap-x-6 gap-y-4 text-[11px] font-medium uppercase tracking-wide text-gray-500 md:justify-end">
+        <Link href="/cfp" className="transition-colors hover:text-black">
+          CFP
+        </Link>
+        <Link href="/volunteer" className="transition-colors hover:text-black">
+          Volunteer
+        </Link>
+        <Link href="/venue" className="transition-colors hover:text-black">
+          Venue
+        </Link>
         <Link href="/gallery" className="transition-colors hover:text-black">
           Gallery
         </Link>

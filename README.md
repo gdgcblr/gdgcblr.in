@@ -1,44 +1,54 @@
-# GDG Cloud Bengaluru Website
+# GDG Cloud Bengaluru
 
-Welcome to the official website for GDG Cloud Bengaluru! This project is built using Next.js 16 (App Router), Tailwind CSS, and Framer Motion for sleek, modern, and impeccable design.
+Official community platform for **Google Developer Group Cloud Bengaluru** — built with Next.js (App Router), Tailwind CSS, Framer Motion, and Firebase Firestore.
 
-## 🚀 Getting Started
+---
 
-To run the project locally on your machine:
+### 🔗 Quick Links
 
-1. Install the dependencies:
+| Resource | Link |
+| :--- | :--- |
+| **Community Chapter** | [gdg.community.dev/gdg-cloud-bengaluru](https://gdg.community.dev/gdg-cloud-bengaluru/) |
+| **Call for Proposals (CFP)** | [/cfp](/cfp) |
+| **Volunteer Applications** | [/volunteer](/volunteer) |
+| **Venue Partnerships** | [/venue](/venue) |
+| **Events & Archives** | [/events](/events) |
+| **Photo Gallery** | [/gallery](/gallery) |
+| **Admin Portal** | [/admin](/admin) |
+
+---
+
+### 🚀 Getting Started
+
+1. **Install dependencies:**
    ```bash
    npm install
    ```
 
-2. Run the development server:
+2. **Configure environment variables:**
+   ```bash
+   cp .env.example .env.local
+   ```
+   Add your Firebase configuration and Google Sheets events CSV URL.
+
+3. **Start local development:**
    ```bash
    npm run dev
    ```
+   Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-3. Open [http://localhost:3000](http://localhost:3000) in your browser.
+---
 
-## ✏️ Editing Content
+### 🛠️ Tech Stack
 
-The site is built with modular components to make content updates incredibly easy without touching the core layout engine.
+- **Framework**: Next.js (App Router, Turbopack)
+- **Styling**: Tailwind CSS
+- **Animations**: Framer Motion & Three.js
+- **Database**: Firebase Firestore
+- **Event Feed**: Google Sheets live CSV integration
 
-### Homepage Content
-- **Hero & General Layout:** All sections on the homepage are located in `app/page.tsx` and the `app/components/home/` directory.
-- **Gallery/Bento Grid:** To add or remove images from the animated gallery grid, edit the `galleryHighlights` array at the top of `app/components/home/GallerySection.tsx`.
+---
 
-### Events Page
-The Events page dynamically reconfigures itself based on the data you provide.
+### 📄 License
 
-To update the Events page, open `app/events/page.tsx`:
-1. **Featured Event:** Edit the `featuredEvent` object at the top of the file. 
-   - *Pro tip:* Toggle `isUpcoming: true` when you have a new event to enable the pulsing "Upcoming" badge and "Register" button. Toggle it to `false` when the event is over to seamlessly switch to a "Latest Event" view.
-2. **Past Events (Archive):** Add or remove items from the `archive` array. The grid will automatically style the rows and apply the brand colors you specify on hover.
-
-### Navigation
-- To update links in the top navigation bar or the footer, edit `app/components/home/Navbar.tsx` and `app/components/home/FooterNav.tsx`.
-
-## 🛠️ Tech Stack
-- **Framework:** Next.js (App Router)
-- **Styling:** Tailwind CSS
-- **Animations:** Framer Motion & GSAP (for MagicBento interactions)
-- **Deployment:** Vercel (Recommended)
+Community open-source project by and for **GDG Cloud Bengaluru**.
