@@ -56,7 +56,7 @@ const initialFormData: FormData = {
   previousTalkUrl: "",
   format: "Talk",
   track: "",
-  level: "",
+  level: "Intermediate",
   title: "",
   abstract: "",
   takeaways: "",
@@ -77,9 +77,21 @@ const tracks = [
 ];
 
 const formats: { id: SessionFormat; label: string; desc: string }[] = [
-  { id: "Talk", label: "Talk", desc: "Technical presentation on architecture, design patterns, or case studies." },
-  { id: "Workshop", label: "Workshop", desc: "Interactive guided coding session where attendees build live." },
-  { id: "Panel", label: "Panel", desc: "Participate as an industry practitioner or domain expert in a panel." },
+  {
+    id: "Talk",
+    label: "Talk",
+    desc: "Technical presentation on architecture, design patterns, or case studies.",
+  },
+  {
+    id: "Workshop",
+    label: "Workshop",
+    desc: "Interactive guided coding session where attendees build live.",
+  },
+  {
+    id: "Panel",
+    label: "Panel",
+    desc: "Participate as an industry practitioner or domain expert in a panel.",
+  },
 ];
 
 const levels = ["Beginner", "Intermediate", "Advanced / Deep Dive"];
@@ -94,7 +106,7 @@ export default function CFPForm() {
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   const handleChange = (
-    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>,
   ) => {
     const { name, value, type } = e.target;
     if (type === "checkbox") {
@@ -142,97 +154,113 @@ export default function CFPForm() {
     }
   };
 
+  const showError = (msg: string) => {
+    setErrorMessage(msg);
+    setTimeout(() => {
+      const errorEl = document.getElementById("cfp-submit-error");
+      if (errorEl) {
+        errorEl.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+    }, 50);
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setErrorMessage("");
 
     // 1. Validate Speaker Info
     if (!formData.fullName.trim()) {
-      setErrorMessage("Please enter your full name.");
+      showError("Please enter your full name.");
       return;
     }
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!formData.email.trim() || !emailRegex.test(formData.email.trim())) {
-      setErrorMessage("Please enter a valid email address (e.g., name@example.com).");
+      showError("Please enter a valid email address (e.g., name@example.com).");
       return;
     }
 
     // Mobile Number: Mandatory & strictly 10 digits
     const phoneDigits = formData.phone.replace(/\D/g, "");
     const isValid10DigitPhone =
-      phoneDigits.length === 10 || (phoneDigits.length === 12 && phoneDigits.startsWith("91"));
+      phoneDigits.length === 10 ||
+      (phoneDigits.length === 12 && phoneDigits.startsWith("91"));
     if (!isValid10DigitPhone) {
-      setErrorMessage("Mobile number is mandatory and must contain exactly 10 digits.");
+      showError("Mobile number is mandatory and must contain exactly 10 digits.");
       return;
     }
 
     if (!formData.role.trim() || !formData.company.trim()) {
-      setErrorMessage("Job role and company are mandatory.");
+      showError("Job role and company are mandatory.");
       return;
     }
 
     if (!formData.city.trim() || !formData.country.trim()) {
-      setErrorMessage("City and country are mandatory.");
+      showError("City and country are mandatory.");
       return;
     }
 
     // Headshot Image: Mandatory
     if (!formData.headshotUrl.trim() && !headshotPreview) {
-      setErrorMessage("Headshot image is mandatory. Please upload or link your photo.");
+      showError("Headshot image is mandatory. Please upload or link your photo in Section 1.");
       return;
     }
 
     if (!formData.bio.trim() || formData.bio.trim().length < 15) {
-      setErrorMessage("Speaker bio is mandatory (minimum 15 characters).");
+      showError("Speaker bio is mandatory (minimum 15 characters).");
       return;
     }
 
     // LinkedIn: Mandatory
     if (!formData.linkedinUrl.trim()) {
-      setErrorMessage("LinkedIn profile URL is mandatory.");
+      showError("LinkedIn profile URL is mandatory.");
       return;
     }
 
     if (!formData.track.trim()) {
-      setErrorMessage("Please select a topic track.");
+      showError("Please select a topic track in Section 3.");
       return;
     }
 
     if (!formData.level.trim()) {
-      setErrorMessage("Please select target audience level.");
+      showError("Please select target audience level in Section 3.");
       return;
     }
 
     // 2. Validate Dynamic Session Format
     if (formData.format === "Panel") {
-      if (!formData.panelTopic.trim()) {
-        setErrorMessage("Please enter the panel topic or discussion theme you want to participate in.");
+      if (!formData.panelTopic.trim() || formData.panelTopic.trim().length < 5) {
+        showError("Please enter the panel topic or discussion theme (minimum 5 characters).");
         return;
       }
-      if (!formData.panelPerspective.trim() || formData.panelPerspective.trim().length < 15) {
-        setErrorMessage("Please describe the perspective and production experience you will bring to the panel.");
+      if (
+        !formData.panelPerspective.trim() ||
+        formData.panelPerspective.trim().length < 15
+      ) {
+        showError(
+          "Please describe the perspective and production experience you will bring to the panel (minimum 15 characters).",
+        );
         return;
       }
     } else {
       // Talk or Workshop
-      if (!formData.title.trim()) {
-        setErrorMessage("Session title is mandatory.");
+      if (!formData.title.trim() || formData.title.trim().length < 5) {
+        showError("Session title is mandatory (minimum 5 characters).");
         return;
       }
       if (!formData.abstract.trim() || formData.abstract.trim().length < 25) {
-        setErrorMessage("Session abstract is mandatory (minimum 25 characters).");
+        showError("Session abstract is mandatory (minimum 25 characters).");
         return;
       }
-      if (!formData.takeaways.trim()) {
-        setErrorMessage("Please list at least 2 key attendee takeaways.");
+      if (!formData.takeaways.trim() || formData.takeaways.trim().length < 10) {
+        showError("Please list at least 2 key attendee takeaways (minimum 10 characters).");
         return;
       }
     }
 
     // Code of Conduct
     if (!formData.acceptedCodeOfConduct) {
-      setErrorMessage("Please review and accept the Code of Conduct to submit your proposal.");
+      showError("Please review and accept the Code of Conduct checkbox below.");
       return;
     }
 
@@ -253,7 +281,7 @@ export default function CFPForm() {
       setSubmittedId(data.id);
       window.scrollTo({ top: 120, behavior: "smooth" });
     } catch (err: any) {
-      setErrorMessage(err.message || "An unexpected error occurred. Please try again.");
+      showError(err.message || "An unexpected error occurred. Please try again.");
     } finally {
       setSubmitting(false);
     }
@@ -271,8 +299,18 @@ export default function CFPForm() {
     return (
       <div className="mx-auto w-full max-w-2xl bg-white border border-black rounded-2xl p-8 sm:p-12 text-center">
         <div className="inline-flex items-center justify-center h-12 w-12 rounded-full border border-black bg-white mb-6">
-          <svg className="h-6 w-6 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-            <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+          <svg
+            className="h-6 w-6 text-black"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth={2}
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M5 13l4 4L19 7"
+            />
           </svg>
         </div>
 
@@ -280,14 +318,21 @@ export default function CFPForm() {
           Proposal Submitted Successfully
         </h2>
         <p className="mt-2 text-sm text-gray-600">
-          Thank you, <span className="font-semibold text-black">{formData.fullName}</span>. Your {formData.format.toLowerCase()} proposal has been sent to the review committee.
+          Thank you,{" "}
+          <span className="font-semibold text-black">{formData.fullName}</span>.
+          Your {formData.format.toLowerCase()} proposal has been sent to the
+          review committee.
         </p>
 
         {/* Reference Box */}
         <div className="mt-8 border border-black rounded-xl p-5 bg-white text-left flex items-center justify-between">
           <div>
-            <span className="text-xs uppercase tracking-wider text-gray-500 font-medium">Proposal Reference ID</span>
-            <p className="font-mono text-base font-bold text-black mt-0.5">{submittedId}</p>
+            <span className="text-xs uppercase tracking-wider text-gray-500 font-medium">
+              Proposal Reference ID
+            </span>
+            <p className="font-mono text-base font-bold text-black mt-0.5">
+              {submittedId}
+            </p>
           </div>
           <button
             type="button"
@@ -301,14 +346,24 @@ export default function CFPForm() {
         {/* Summary Info */}
         <div className="mt-6 border border-black/20 rounded-xl p-5 bg-white text-left text-xs space-y-2 text-gray-700">
           <div>
-            <span className="font-semibold text-black">Format:</span> {formData.format} &bull; {formData.track}
+            <span className="font-semibold text-black">Format:</span>{" "}
+            {formData.format} &bull; {formData.track}
           </div>
           {formData.format === "Panel" ? (
-            <div><span className="font-semibold text-black">Panel Topic:</span> {formData.panelTopic}</div>
+            <div>
+              <span className="font-semibold text-black">Panel Topic:</span>{" "}
+              {formData.panelTopic}
+            </div>
           ) : (
-            <div><span className="font-semibold text-black">Session Title:</span> {formData.title}</div>
+            <div>
+              <span className="font-semibold text-black">Session Title:</span>{" "}
+              {formData.title}
+            </div>
           )}
-          <div><span className="font-semibold text-black">Contact:</span> {formData.email} &bull; {formData.phone}</div>
+          <div>
+            <span className="font-semibold text-black">Contact:</span>{" "}
+            {formData.email} &bull; {formData.phone}
+          </div>
         </div>
 
         <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
@@ -338,12 +393,15 @@ export default function CFPForm() {
   return (
     <form
       onSubmit={handleSubmit}
+      noValidate
       className="mx-auto w-full max-w-3xl bg-white border border-black rounded-2xl p-6 sm:p-12 shadow-none"
     >
       {/* Error alert */}
       {errorMessage && (
         <div className="mb-8 border border-black bg-white p-4 rounded-xl text-xs font-medium text-black">
-          <p className="font-bold uppercase tracking-wider mb-1">Please correct the following:</p>
+          <p className="font-bold uppercase tracking-wider mb-1">
+            Please correct the following:
+          </p>
           <p>{errorMessage}</p>
         </div>
       )}
@@ -363,14 +421,19 @@ export default function CFPForm() {
             <label className="block text-xs font-bold uppercase tracking-wider text-black">
               Headshot Image <span className="text-red-500">*</span>
             </label>
-            <span className="text-[11px] font-semibold text-black">Mandatory</span>
+            <span className="text-[11px] font-semibold text-black">
+              Mandatory
+            </span>
           </div>
           <p className="mt-0.5 text-xs text-gray-600">
-            Upload a clear high-resolution portrait photo for the speaker roster. Max 5MB (PNG, JPG, WebP).
+            Upload a clear high-resolution portrait photo for the speaker
+            roster. Max 5MB (PNG, JPG, WebP).
           </p>
 
           <div className="mt-4 flex flex-col sm:flex-row sm:items-center gap-4">
-            <div className={`relative h-20 w-20 shrink-0 rounded-xl border ${headshotPreview ? "border-black" : "border-dashed border-black"} bg-white overflow-hidden flex items-center justify-center`}>
+            <div
+              className={`relative h-20 w-20 shrink-0 rounded-xl border ${headshotPreview ? "border-black" : "border-dashed border-black"} bg-white overflow-hidden flex items-center justify-center`}
+            >
               {headshotPreview ? (
                 <img
                   src={headshotPreview}
@@ -379,10 +442,22 @@ export default function CFPForm() {
                 />
               ) : (
                 <div className="text-center p-2">
-                  <svg className="h-6 w-6 text-gray-400 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                  <svg
+                    className="h-6 w-6 text-gray-400 mx-auto"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={1.5}
+                      d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                    />
                   </svg>
-                  <span className="text-[9px] uppercase font-bold text-gray-400 block mt-1">Required</span>
+                  <span className="text-[9px] uppercase font-bold text-gray-400 block mt-1">
+                    Required
+                  </span>
                 </div>
               )}
             </div>
@@ -416,11 +491,17 @@ export default function CFPForm() {
               </div>
 
               <div className="flex items-center gap-2">
-                <span className="text-[11px] text-gray-500">Or public URL:</span>
+                <span className="text-[11px] text-gray-500">
+                  Or public URL:
+                </span>
                 <input
                   type="url"
                   name="headshotUrl"
-                  value={formData.headshotUrl.startsWith("data:") ? "" : formData.headshotUrl}
+                  value={
+                    formData.headshotUrl.startsWith("data:")
+                      ? ""
+                      : formData.headshotUrl
+                  }
                   onChange={(e) => {
                     handleChange(e);
                     setHeadshotPreview(e.target.value);
@@ -469,7 +550,8 @@ export default function CFPForm() {
           <div>
             <div className="flex items-center justify-between">
               <label className="block text-xs font-bold uppercase tracking-wider text-black">
-                Mobile Number (10 Digits) <span className="text-red-500">*</span>
+                Mobile Number (10 Digits){" "}
+                <span className="text-red-500">*</span>
               </label>
               <span className="text-[10px] text-gray-500 font-mono">
                 {formData.phone.replace(/\D/g, "").length} / 10 digits
@@ -552,7 +634,9 @@ export default function CFPForm() {
               <label className="block text-xs font-bold uppercase tracking-wider text-black">
                 Speaker Bio <span className="text-red-500">*</span>
               </label>
-              <span className="text-[10px] text-gray-500">{formData.bio.length} characters</span>
+              <span className="text-[10px] text-gray-500">
+                {formData.bio.length} characters
+              </span>
             </div>
             <textarea
               name="bio"
@@ -636,7 +720,8 @@ export default function CFPForm() {
 
           <div>
             <label className="block text-xs font-bold uppercase tracking-wider text-black">
-              Previous Talk Video / Slides <span className="text-gray-400 font-normal">(Optional)</span>
+              Previous Talk Video / Slides{" "}
+              <span className="text-gray-400 font-normal">(Optional)</span>
             </label>
             <input
               type="url"
@@ -656,7 +741,8 @@ export default function CFPForm() {
           3. Session Proposal
         </h2>
         <p className="mt-1 text-xs text-gray-600">
-          First choose your session format. The fields below will adapt dynamically.
+          First choose your session format. The fields below will adapt
+          dynamically.
         </p>
 
         {/* 1. FIRST: SESSION FORMAT SELECTOR */}
@@ -671,7 +757,9 @@ export default function CFPForm() {
                 <button
                   key={f.id}
                   type="button"
-                  onClick={() => setFormData((prev) => ({ ...prev, format: f.id }))}
+                  onClick={() =>
+                    setFormData((prev) => ({ ...prev, format: f.id }))
+                  }
                   className={`text-left border border-black rounded-xl p-4 transition ${
                     isSelected
                       ? "bg-black text-white"
@@ -680,9 +768,13 @@ export default function CFPForm() {
                 >
                   <div className="flex items-center justify-between">
                     <span className="text-sm font-bold">{f.label}</span>
-                    <span className={`h-2 w-2 rounded-full ${isSelected ? "bg-white" : "border border-black"}`} />
+                    <span
+                      className={`h-2 w-2 rounded-full ${isSelected ? "bg-white" : "border border-black"}`}
+                    />
                   </div>
-                  <p className={`mt-1.5 text-xs leading-relaxed ${isSelected ? "text-gray-300" : "text-gray-600"}`}>
+                  <p
+                    className={`mt-1.5 text-xs leading-relaxed ${isSelected ? "text-gray-300" : "text-gray-600"}`}
+                  >
                     {f.desc}
                   </p>
                 </button>
@@ -725,7 +817,9 @@ export default function CFPForm() {
                   <button
                     key={lvl}
                     type="button"
-                    onClick={() => setFormData((prev) => ({ ...prev, level: lvl }))}
+                    onClick={() =>
+                      setFormData((prev) => ({ ...prev, level: lvl }))
+                    }
                     className={`border border-black rounded-full px-4 py-1.5 text-xs font-semibold transition ${
                       isSelected
                         ? "bg-black text-white"
@@ -743,13 +837,19 @@ export default function CFPForm() {
           {formData.format === "Panel" ? (
             <div className="space-y-5 border-t border-black/15 pt-5">
               <div className="bg-gray-50 border border-black/20 rounded-xl p-4 text-xs text-gray-700">
-                <span className="font-bold text-black block mb-0.5">Panelist Application</span>
-                For panel discussions, standalone session titles, slide abstracts, and individual takeaways are not required. Please tell us your focus topic and what technical perspectives you bring.
+                <span className="font-bold text-black block mb-0.5">
+                  Panelist Application
+                </span>
+                For panel discussions, standalone session titles, slide
+                abstracts, and individual takeaways are not required. Please
+                tell us your focus topic and what technical perspectives you
+                bring.
               </div>
 
               <div>
                 <label className="block text-xs font-bold uppercase tracking-wider text-black">
-                  Panel Topic / Discussion Theme <span className="text-red-500">*</span>
+                  Panel Topic / Discussion Theme{" "}
+                  <span className="text-red-500">*</span>
                 </label>
                 <input
                   type="text"
@@ -764,7 +864,8 @@ export default function CFPForm() {
 
               <div>
                 <label className="block text-xs font-bold uppercase tracking-wider text-black">
-                  Your Perspective & Industry Experience <span className="text-red-500">*</span>
+                  Your Perspective & Industry Experience{" "}
+                  <span className="text-red-500">*</span>
                 </label>
                 <textarea
                   name="panelPerspective"
@@ -782,7 +883,8 @@ export default function CFPForm() {
             <div className="space-y-5 border-t border-black/15 pt-5">
               <div>
                 <label className="block text-xs font-bold uppercase tracking-wider text-black">
-                  {formData.format} Title <span className="text-red-500">*</span>
+                  {formData.format} Title{" "}
+                  <span className="text-red-500">*</span>
                 </label>
                 <input
                   type="text"
@@ -801,7 +903,8 @@ export default function CFPForm() {
 
               <div>
                 <label className="block text-xs font-bold uppercase tracking-wider text-black">
-                  {formData.format} Abstract / Description <span className="text-red-500">*</span>
+                  {formData.format} Abstract / Description{" "}
+                  <span className="text-red-500">*</span>
                 </label>
                 <textarea
                   name="abstract"
@@ -832,7 +935,10 @@ export default function CFPForm() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div>
                   <label className="block text-xs font-bold uppercase tracking-wider text-black">
-                    Prerequisites / Tools <span className="text-gray-400 font-normal">(Optional)</span>
+                    Prerequisites / Tools{" "}
+                    <span className="text-gray-400 font-normal">
+                      (Optional)
+                    </span>
                   </label>
                   <input
                     type="text"
@@ -854,9 +960,15 @@ export default function CFPForm() {
                     onChange={handleChange}
                     className="mt-1.5 block w-full border border-black rounded-lg px-3.5 py-2.5 text-sm text-black bg-white focus:outline-none"
                   >
-                    <option value="No - Brand new talk">No - Brand new talk</option>
-                    <option value="Yes - Local meetup">Yes - Local meetup</option>
-                    <option value="Yes - Major conference">Yes - Major conference</option>
+                    <option value="No - Brand new talk">
+                      No - Brand new talk
+                    </option>
+                    <option value="Yes - Local meetup">
+                      Yes - Local meetup
+                    </option>
+                    <option value="Yes - Major conference">
+                      Yes - Major conference
+                    </option>
                   </select>
                 </div>
               </div>
@@ -878,12 +990,43 @@ export default function CFPForm() {
           />
           <span className="text-xs text-gray-700 leading-relaxed">
             I agree to follow the{" "}
-            <Link href="/code-of-conduct" target="_blank" className="font-bold text-black underline">
+            <Link
+              href="/code-of-conduct"
+              target="_blank"
+              className="font-bold text-black underline"
+            >
               GDG Cloud Bengaluru Code of Conduct
             </Link>
-            . I confirm this submission is authentic work and consent to having the presentation recorded for community purposes.
+            . I confirm this submission is authentic work and consent to having
+            the presentation recorded for community purposes.
           </span>
         </label>
+
+        {/* Error banner directly above submit button */}
+        {errorMessage && (
+          <div
+            id="cfp-submit-error"
+            className="mt-6 border border-black bg-white p-4 rounded-xl text-xs font-semibold text-black"
+          >
+            <div className="flex items-center gap-2 font-bold uppercase tracking-wider mb-1 text-black">
+              <svg
+                className="h-4 w-4 shrink-0 text-black"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
+                />
+              </svg>
+              Action Required:
+            </div>
+            <p className="text-gray-800 font-normal">{errorMessage}</p>
+          </div>
+        )}
 
         <div className="mt-8">
           <button
