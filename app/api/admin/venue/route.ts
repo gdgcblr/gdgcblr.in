@@ -4,18 +4,59 @@ import path from "path";
 import { db } from "@/app/lib/firebase";
 import { collection, getDocs, query, orderBy } from "firebase/firestore";
 
+import {
+  getClientIp,
+  checkRateLimit,
+  recordFailedAttempt,
+  resetRateLimit,
+  secureCompare,
+} from "@/app/lib/rateLimit";
+
 const ADMIN_PASSWORD = process.env.CFP_ADMIN_PASSWORD;
 
 export async function POST(req: NextRequest) {
   try {
+    const ip = getClientIp(req);
+
+    // 1. Check rate limit
+    const limitStatus = checkRateLimit(ip);
+    if (limitStatus.isLimited) {
+      return NextResponse.json(
+        {
+          error: `Too many failed login attempts from your IP. Please try again in ${Math.ceil(
+            limitStatus.retryAfterSeconds / 60
+          )} minutes.`,
+        },
+        {
+          status: 429,
+          headers: { "Retry-After": String(limitStatus.retryAfterSeconds) },
+        }
+      );
+    }
+
     const { password } = await req.json();
 
-    if (!ADMIN_PASSWORD || !password || password !== ADMIN_PASSWORD) {
+    // 2. Validate password with timing-safe comparison
+    const isPasswordValid =
+      Boolean(ADMIN_PASSWORD) &&
+      typeof password === "string" &&
+      secureCompare(password, ADMIN_PASSWORD!);
+
+    if (!isPasswordValid) {
+      const remaining = recordFailedAttempt(ip);
       return NextResponse.json(
-        { error: "Invalid admin password. Access denied." },
+        {
+          error:
+            remaining > 0
+              ? `Invalid admin password. ${remaining} attempt${remaining === 1 ? "" : "s"} remaining.`
+              : "Too many failed login attempts. Access locked for 15 minutes.",
+        },
         { status: 401 }
       );
     }
+
+    // 3. Reset rate limit on successful authentication
+    resetRateLimit(ip);
 
     let venues: any[] = [];
     let firestoreQueried = false;
