@@ -25,20 +25,23 @@ const stats = [
 
 export default function StatsGrid() {
   return (
-    <div className="grid grid-cols-2 gap-y-10 border-y border-gray-200 py-10 md:grid-cols-4 md:gap-y-0">
+    <div className="grid grid-cols-2 gap-y-12 gap-x-4 py-12 md:grid-cols-4 md:gap-y-0">
       {stats.map((stat, idx) => (
         <div
           key={idx}
-          className={`flex flex-col items-center px-4 text-center ${
-            idx % 2 === 1 ? "border-l border-gray-200" : ""
-          } md:border-l md:border-gray-200 md:first:border-none`}
+          className={`relative flex flex-col items-center px-6 text-center ${
+            idx > 0
+              ? "md:before:absolute md:before:left-0 md:before:top-1/2 md:before:-translate-y-1/2 md:before:h-12 md:before:w-px md:before:bg-gray-200"
+              : ""
+          }`}
         >
           <dt
-            className={`text-4xl font-medium tracking-tight sm:text-5xl ${stat.color}`}
+            className={`text-6xl font-semibold tracking-tighter sm:text-7xl ${stat.color}`}
+            style={{ lineHeight: 1 }}
           >
             {stat.value}
           </dt>
-          <dd className="mt-3 max-w-[140px] text-[10px] font-bold uppercase tracking-[0.15em] text-gray-400 sm:text-xs">
+          <dd className="mt-4 text-sm font-medium text-gray-500">
             {stat.label}
           </dd>
         </div>

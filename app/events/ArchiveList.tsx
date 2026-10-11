@@ -6,10 +6,12 @@ import type { EventData } from "../lib/sheets";
 export default function ArchiveList({ archive }: { archive: EventData[] }) {
   const [visibleCount, setVisibleCount] = useState(10);
 
-  const visibleEvents = archive.slice(0, visibleCount);
-  const hasMore = visibleCount < archive.length;
+  // Strictly only list archived/past events
+  const archivedEvents = archive.filter((e) => !e.isUpcoming);
+  const visibleEvents = archivedEvents.slice(0, visibleCount);
+  const hasMore = visibleCount < archivedEvents.length;
 
-  if (archive.length === 0) return null;
+  if (archivedEvents.length === 0) return null;
 
   return (
     <section className="mx-auto mt-32 w-full max-w-7xl px-5 sm:mt-48 sm:px-8 lg:px-10">
@@ -28,21 +30,22 @@ export default function ArchiveList({ archive }: { archive: EventData[] }) {
             key={i}
             className="group relative flex flex-col border-b border-gray-100 py-8 transition-colors hover:border-black sm:flex-row sm:items-center sm:justify-between sm:py-12"
           >
-            <div className="flex flex-col">
+            <div className="flex flex-col flex-1 pr-6">
               <span
-                className="mb-2 text-xs font-bold uppercase tracking-wider"
-                style={{ color: "black" }}
+                className="mb-2 text-xs font-bold uppercase tracking-wider text-black"
               >
                 {item.tag}
               </span>
-              <h3
-                className="text-3xl font-bold tracking-tight text-gray-300 transition-colors duration-300 group-hover:text-[var(--hover-color)] sm:text-5xl lg:text-6xl"
-                style={
-                  { "--hover-color": item.color } as React.CSSProperties
-                }
-              >
-                {item.title}
-              </h3>
+              <a href={item.link || "#"} className="group/link block">
+                <h3
+                  className="text-3xl font-bold tracking-tight text-gray-900 transition-colors duration-300 group-hover:text-[var(--hover-color)] sm:text-5xl lg:text-6xl"
+                  style={
+                    { "--hover-color": item.color || "#000" } as React.CSSProperties
+                  }
+                >
+                  {item.title}
+                </h3>
+              </a>
             </div>
 
             <div className="mt-4 flex items-center gap-4 sm:mt-0 sm:text-right">
@@ -72,7 +75,7 @@ export default function ArchiveList({ archive }: { archive: EventData[] }) {
         ))}
       </div>
 
-      {hasMore && (
+      {hasMore ? (
         <div className="mt-16 flex justify-center w-full">
           <button
             onClick={() => setVisibleCount((prev) => prev + 10)}
@@ -88,6 +91,15 @@ export default function ArchiveList({ archive }: { archive: EventData[] }) {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
             </svg>
           </button>
+        </div>
+      ) : (
+        <div className="mt-28 pb-16 flex flex-col items-center justify-center text-center select-none">
+          <p className="font-['Google_Sans',sans-serif] text-sm font-medium tracking-tight text-gray-500">
+            End of recorded archives
+          </p>
+          <p className="font-['Google_Sans',sans-serif] mt-1.5 max-w-md text-xs leading-relaxed text-gray-400">
+            Earlier meetups live on in our memories and unorganized Google Drive folders.
+          </p>
         </div>
       )}
     </section>

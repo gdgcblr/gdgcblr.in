@@ -12,6 +12,7 @@ export type EventData = {
   color: string;
   tag: string;
   meta: string;
+  image?: string;
 };
 
 export async function getEventsData(csvUrl?: string): Promise<EventData[]> {
@@ -51,6 +52,7 @@ export async function getEventsData(csvUrl?: string): Promise<EventData[]> {
             color: row.Color || "#000000",
             tag: row.Tag || "",
             meta: row.Meta || "",
+            image: row.Image || row.ImageUrl || row.image || "",
           }));
           resolve(events);
         },

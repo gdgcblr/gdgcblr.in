@@ -12,14 +12,31 @@ export const metadata: Metadata = {
     "DeployFest and past GDG Cloud Bengaluru programs across Google Cloud, GenAI, Kubernetes, DevOps, and developer learning.",
 };
 
+function getHeroTitleClass(title: string) {
+  const len = title.length;
+  if (len <= 15) {
+    return "text-5xl sm:text-7xl lg:text-[5.5rem] lg:leading-[0.95]";
+  } else if (len <= 28) {
+    return "text-4xl sm:text-6xl lg:text-7xl lg:leading-[1.02]";
+  } else if (len <= 45) {
+    return "text-3xl sm:text-5xl lg:text-6xl lg:leading-[1.1]";
+  } else {
+    return "text-2xl sm:text-4xl lg:text-5xl lg:leading-[1.15]";
+  }
+}
+
 export default async function EventsPage() {
   const events = await getEventsData();
   
-  // Find the featured event, or fallback to the first event
-  const featuredEvent = events.find((e) => e.isFeatured) || events[0];
-  
-  // All other events go into the archive
-  const archive = events.filter((e) => e !== featuredEvent);
+  // Find the featured upcoming event, or featured event, or fallback to first event
+  const featuredEvent =
+    events.find((e) => e.isFeatured && e.isUpcoming) ||
+    events.find((e) => e.isUpcoming) ||
+    events.find((e) => e.isFeatured) ||
+    events[0];
+
+  // Past Events: strictly only list archived events (non-upcoming)
+  const archive = events.filter((e) => !e.isUpcoming && e !== featuredEvent);
 
   if (!featuredEvent) {
     return (
@@ -52,11 +69,8 @@ export default async function EventsPage() {
             </div>
           ) : null}
 
-          <h1 className="text-balance text-6xl font-bold tracking-tighter sm:text-7xl lg:text-[8rem] lg:leading-[0.9]">
-            {featuredEvent.title.split(" ")[0]}{" "}
-            <span className="text-gray-300">
-              {featuredEvent.title.split(" ").slice(1).join(" ")}
-            </span>
+          <h1 className={`text-balance font-bold tracking-tighter text-black ${getHeroTitleClass(featuredEvent.title)}`}>
+            {featuredEvent.title}
           </h1>
           
           {featuredEvent.description && (
@@ -100,7 +114,7 @@ export default async function EventsPage() {
               <span className="absolute inset-0 z-0 h-full w-full -translate-x-full rounded-full bg-gradient-to-r from-[#EA4335] via-[#4285F4] to-[#34A853] transition-transform duration-500 ease-out group-hover:translate-x-0" />
               <span className="relative flex items-center gap-2">
                 {featuredEvent.isUpcoming
-                  ? `Register for ${featuredEvent.title.split(" ")[0]}`
+                  ? (featuredEvent.title.length < 24 ? `Register for ${featuredEvent.title}` : "Register Now")
                   : "View Event Highlights"}
                 <svg
                   className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
